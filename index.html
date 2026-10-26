@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thiago Veras Empreendimentos — Casas de temporada no litoral do Piauí</title>
+<meta name="description" content="Casas para temporada em Luís Correia e no litoral do Piauí, e obras residenciais e comerciais da Thiago Veras Construtora & Imobiliária. Reserve pelo WhatsApp.">
+<meta property="og:title" content="Thiago Veras Empreendimentos">
+<meta property="og:description" content="Casas de temporada no litoral do Piauí. Fotos, reservas e pagamento por Pix no WhatsApp.">
+<meta property="og:image" content="img/logo.jpg">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta property="og:type" content="website">
+<style>
+:root{
+  --bg:#faf7f2; --surface:#ffffff; --ink:#2a211c; --muted:#6b5f57; --line:#e8e0d6;
+  --brand:#fd4f1a; --brand-ink:#ffffff; --deep:#2b2b2b; --sea:#1f7a8c;
+  --radius:14px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#1c1613; --surface:#262019; --ink:#f3ece4; --muted:#b5a89d; --line:#3a312a;
+    --brand:#ff6232; --deep:#1b1b1b; --sea:#4fb0c4;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+
+header.top{position:sticky;top:0;z-index:20;background:#2b2b2b;color:#fff;border-bottom:3px solid var(--brand)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;height:78px}
+.logo{display:flex;align-items:center;text-decoration:none}
+.logo img{height:66px;width:auto}
+nav.menu{display:flex;gap:22px;font-size:.95rem}
+nav.menu a{text-decoration:none;color:#d8d2cc}
+nav.menu a:hover{color:#fff}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--brand);color:var(--brand-ink);text-decoration:none;font-weight:700;padding:12px 20px;border-radius:999px;border:0;cursor:pointer;font-size:1rem}
+.btn:hover{filter:brightness(1.07)}
+.btn.small{padding:9px 16px;font-size:.92rem}
+.btn.ghost{background:transparent;color:inherit;border:1.5px solid currentColor}
+@media(max-width:760px){nav.menu{display:none}}
+
+.hero{position:relative;color:#fff;background:var(--deep)}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,14,10,.35),rgba(20,14,10,.78))}
+.hero .wrap{position:relative;z-index:1;padding-top:clamp(90px,16vw,170px);padding-bottom:clamp(70px,12vw,130px)}
+.hero h1{font-size:clamp(2rem,6vw,3.6rem);line-height:1.08;margin:0 0 16px;max-width:15em;letter-spacing:-.01em}
+.hero p{font-size:clamp(1.05rem,2.4vw,1.3rem);max-width:34em;margin:0 0 28px;opacity:.95}
+.hero .row{display:flex;flex-wrap:wrap;gap:12px}
+
+section{padding:clamp(48px,8vw,88px) 0}
+section h2{font-size:clamp(1.6rem,4vw,2.3rem);line-height:1.15;margin:0 0 10px;letter-spacing:-.01em}
+.lead{color:var(--muted);max-width:40em;margin:0 0 32px}
+
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin-top:8px}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+.step b{display:block;font-size:1.05rem;margin-bottom:4px}
+.step span{color:var(--muted);font-size:.95rem}
+.step i{font-style:normal;display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--brand);color:#fff;font-weight:800;margin-bottom:10px}
+
+.house{margin-top:44px}
+.house h3{font-size:1.3rem;margin:0 0 4px}
+.house p{margin:0 0 14px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.grid button{padding:0;border:0;background:var(--line);border-radius:var(--radius);overflow:hidden;cursor:zoom-in;aspect-ratio:4/3;display:block}
+.grid button img{width:100%;height:100%;object-fit:cover;transition:transform .35s}
+.grid button:hover img{transform:scale(1.04)}
+.grid button:focus-visible{outline:3px solid var(--brand);outline-offset:2px}
+
+.alt{background:var(--surface);border-block:1px solid var(--line)}
+.two{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(20px,5vw,56px);align-items:center}
+.two img{border-radius:var(--radius);width:100%;aspect-ratio:4/5;object-fit:cover}
+@media(max-width:820px){.two{grid-template-columns:1fr}.two img{aspect-ratio:4/3}}
+ul.ticks{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:8px}
+ul.ticks li::before{content:"✓";color:var(--brand);font-weight:800;margin-right:10px}
+
+.contact{background:var(--deep);color:#f3ece4}
+.contact .lead{color:#cbbfb4}
+.contact .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+.contact .btn.ghost{color:#f3ece4}
+
+footer{padding:34px 0 46px;font-size:.88rem;color:var(--muted)}
+footer .wrap{display:grid;gap:6px}
+footer a{color:inherit}
+
+dialog{border:0;padding:0;background:transparent;max-width:96vw;max-height:94vh;overflow:visible}
+dialog::backdrop{background:rgba(10,7,5,.88)}
+dialog img{max-height:90vh;max-width:96vw;border-radius:10px;margin:auto}
+dialog .x{position:absolute;top:-14px;right:-6px;width:42px;height:42px;border-radius:50%;border:0;background:#fff;color:#000;font-size:1.4rem;cursor:pointer}
+.wa-float{position:fixed;right:16px;bottom:16px;z-index:30;box-shadow:0 8px 24px rgba(0,0,0,.28)}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#topo" aria-label="Thiago Veras Empreendimentos"><img src="img/logo.png" alt="Thiago Veras Empreendimentos" width="93" height="66"></a>
+    <nav class="menu" aria-label="Seções">
+      <a href="#como">Como reservar</a>
+      <a href="#casas">Casas</a>
+      <a href="#obras">Construtora</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a class="btn small" href="https://wa.me/5586988148955?text=Ol%C3%A1!%20Quero%20saber%20sobre%20as%20casas%20de%20temporada." rel="noopener">WhatsApp</a>
+  </div>
+</header>
+
+<main id="topo">
+  <div class="hero">
+    <img src="img/hero.jpg" alt="Casa amarela de dois andares com quintal amplo, no litoral do Piauí" fetchpriority="high">
+    <div class="wrap">
+      <h1>Casas de temporada no litoral do Piauí</h1>
+      <p>Luís Correia e região. Veja fotos, confira datas e reserve conversando direto no WhatsApp, com pagamento por Pix.</p>
+      <div class="row">
+        <a class="btn" href="https://wa.me/5586988148955?text=Ol%C3%A1!%20Quero%20saber%20sobre%20as%20casas%20de%20temporada." rel="noopener">Reservar pelo WhatsApp</a>
+        <a class="btn ghost" href="#casas">Ver as casas</a>
+      </div>
+    </div>
+  </div>
+
+  <section id="como">
+    <div class="wrap">
+      <h2>Reservar é simples</h2>
+      <p class="lead">Nosso atendimento no WhatsApp responde na hora, a qualquer horário.</p>
+      <div class="steps">
+        <div class="step"><i>1</i><b>Escolha a casa</b><span>Diga o código ou o nome da casa e receba fotos e vídeo.</span></div>
+        <div class="step"><i>2</i><b>Informe as datas</b><span>Confira na hora se o período está livre e o valor total.</span></div>
+        <div class="step"><i>3</i><b>Pague a entrada no Pix</b><span>Receba o código Pix e a reserva fica garantida.</span></div>
+        <div class="step"><i>4</i><b>Aproveite</b><span>Combine a chegada com a nossa equipe e é só curtir.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="casas" class="alt">
+    <div class="wrap">
+      <h2>Nossas casas</h2>
+      <p class="lead">Toque em uma foto para ampliar. Para valores, datas livres e vídeos, chame no WhatsApp.</p>
+
+      <div class="house">
+        <h3>Casa com pergolado e piscina</h3>
+        <p>Jardim, área coberta e piscina, perto da praia.</p>
+        <div class="grid">
+          <button type="button"><img loading="lazy" src="img/casa-pergolado-1.jpg" alt="Área coberta com vista para o jardim e a piscina"></button>
+          <button type="button"><img loading="lazy" src="img/casa-pergolado-2.jpg" alt="Jardim com mesa de pedra e piscina ao fundo"></button>
+        </div>
+      </div>
+
+      <div class="house">
+        <h3>Casa com piscina e área gourmet</h3>
+        <p>Varanda ampla, churrasqueira e piscina para a família toda.</p>
+        <div class="grid">
+          <button type="button"><img loading="lazy" src="img/casa-piscina-1.jpg" alt="Piscina e deck ao entardecer"></button>
+          <button type="button"><img loading="lazy" src="img/casa-piscina-2.jpg" alt="Área gourmet com churrasqueira e mesa de madeira"></button>
+          <button type="button"><img loading="lazy" src="img/casa-piscina-3.jpg" alt="Sala ampla com iluminação em gesso e rede"></button>
+          <button type="button"><img loading="lazy" src="img/casa-piscina-4.jpg" alt="Varanda com piso claro ao lado da piscina"></button>
+        </div>
+      </div>
+
+      <div class="house">
+        <h3>Casa amarela</h3>
+        <p>Sobrado espaçoso com quintal amplo e área aberta.</p>
+        <div class="grid">
+          <button type="button"><img loading="lazy" src="img/casa-amarela-1.jpg" alt="Fachada da casa amarela com quintal de pedra"></button>
+          <button type="button"><img loading="lazy" src="img/casa-amarela-2.jpg" alt="Lateral da casa amarela com varanda"></button>
+        </div>
+      </div>
+
+      <div class="house">
+        <h3>Casa moderna</h3>
+        <p>Arquitetura contemporânea, piso de porcelanato e jardim.</p>
+        <div class="grid">
+          <button type="button"><img loading="lazy" src="img/casa-moderna-1.jpg" alt="Jardim com palmeira e caminho de pedras até a entrada"></button>
+          <button type="button"><img loading="lazy" src="img/casa-moderna-2.jpg" alt="Sala integrada com forro rebaixado e piso de porcelanato"></button>
+          <button type="button"><img loading="lazy" src="img/casa-moderna-3.jpg" alt="Cozinha com balcão de pedra escura"></button>
+          <button type="button"><img loading="lazy" src="img/casa-moderna-4.jpg" alt="Entrada iluminada à noite"></button>
+        </div>
+      </div>
+
+      <div class="house">
+        <h3>Casa com garagem</h3>
+        <p>Fachada moderna com garagem coberta.</p>
+        <div class="grid">
+          <button type="button"><img loading="lazy" src="img/casa-fachada-1.jpg" alt="Fachada da casa com pedra e iluminação à noite"></button>
+          <button type="button"><img loading="lazy" src="img/casa-fachada-2.jpg" alt="Fachada da casa com portão branco e parede de pedra"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="obras">
+    <div class="wrap two">
+      <div>
+        <h2>Também construímos</h2>
+        <p class="lead" style="margin-bottom:0">A Thiago Veras Construtora &amp; Imobiliária executa obras residenciais e comerciais na região, do projeto à entrega das chaves.</p>
+        <ul class="ticks">
+          <li>Casas e sobrados residenciais</li>
+          <li>Galpões e obras comerciais</li>
+          <li>Acompanhamento da obra do início ao fim</li>
+        </ul>
+        <p style="margin-top:22px"><a class="btn ghost" style="color:var(--ink)" href="https://wa.me/5586988148955?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento%20de%20obra." rel="noopener">Pedir orçamento</a></p>
+      </div>
+      <img loading="lazy" src="img/placa.jpg" alt="Fachada com a placa Thiago Veras Construtora e Imobiliária">
+    </div>
+    <div class="wrap" style="margin-top:28px">
+      <div class="grid">
+        <button type="button"><img loading="lazy" src="img/obra-sobrado.jpg" alt="Sobrado em construção com andaime"></button>
+        <button type="button"><img loading="lazy" src="img/obra-casa.jpg" alt="Casa em construção com entrada e calçada de pedra"></button>
+        <button type="button"><img loading="lazy" src="img/obra-galpao.jpg" alt="Fachada de galpão de blocos com portão de enrolar"></button>
+        <button type="button"><img loading="lazy" src="img/obra-galpao-interno.jpg" alt="Interior de galpão amplo com telhado metálico"></button>
+        <button type="button"><img loading="lazy" src="img/obra-comercial.jpg" alt="Fachada comercial de farmácia à noite"></button>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" class="contact">
+    <div class="wrap">
+      <h2>Fale com a gente</h2>
+      <p class="lead">Atendimento pelo WhatsApp, com resposta imediata. Para falar com uma pessoa, é só pedir.</p>
+      <div class="row">
+        <a class="btn" href="https://wa.me/5586988148955?text=Ol%C3%A1!%20Quero%20saber%20sobre%20as%20casas%20de%20temporada." rel="noopener">Chamar no WhatsApp</a>
+        <a class="btn ghost" href="https://www.instagram.com/thiago_veras_empreendimentos/" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><b>THIAGO V MUNIZ LTDA</b> · CNPJ 44.226.649/0001-09</div>
+    <div>Avenida Prefeito Antonio de Padua da Costa Lima, 838, Centro · Luís Correia, PI · CEP 64220-000</div>
+    <div>WhatsApp (86) 98814-8955 · <a href="https://163-176-74-32.sslip.io/privacidade">Política de privacidade</a></div>
+  </div>
+</footer>
+
+<dialog id="zoom"><button class="x" aria-label="Fechar" type="button">×</button><img alt=""></dialog>
+
+<script>
+(function(){
+  var d=document.getElementById('zoom'), im=d.querySelector('img');
+  document.querySelectorAll('.grid button').forEach(function(b){
+    b.addEventListener('click',function(){var s=b.querySelector('img');im.src=s.src;im.alt=s.alt;d.showModal();});
+  });
+  d.addEventListener('click',function(e){if(e.target===d||e.target.classList.contains('x'))d.close();});
+})();
+</script>
+</body>
+</html>

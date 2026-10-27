@@ -286,3 +286,5 @@ nav.menu a[aria-current="page"]::after{transform:scaleX(1)}
 }
 .wa-float{transition:transform .2s,opacity .2s}
 .wa-float.oculto{opacity:0;pointer-events:none;transform:scale(.8)}
+.book .ocupadas{margin:0;font-size:.85rem;color:var(--muted);background:var(--sand);border-radius:10px;padding:8px 12px}
+.book .ocupadas b{color:var(--ink)}

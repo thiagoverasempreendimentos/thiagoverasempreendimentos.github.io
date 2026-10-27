@@ -174,10 +174,12 @@
       <label>Pessoas<input type="number" id="b-pessoas" min="1" max="40" inputmode="numeric" placeholder="Ex.: 6"></label>
       <label>Seu nome<input type="text" id="b-nome" autocomplete="name" maxlength="60" placeholder="Ex.: Ana"></label>
     </div>
+    <label>Seu WhatsApp (opcional)<input type="tel" id="b-whats" autocomplete="tel" inputmode="tel" maxlength="20" placeholder="(86) 99999-9999"></label>
+    <p class="ocupadas" id="b-ocupadas" hidden></p>
     <div class="resumo" id="b-resumo" aria-live="polite">Escolha a entrada e a saída para ver o resumo.</div>
     <p class="erro" id="b-erro" role="alert" hidden></p>
     <a class="btn" id="b-final" href="#" rel="noopener" aria-disabled="true">Finalizar no WhatsApp</a>
-    <p class="nota">A reserva só vale depois que o Thiago confirmar a disponibilidade e você pagar a entrada.</p>
+    <p class="nota">Ao finalizar, as datas ficam seguras por algumas horas para você. A reserva só vale depois que o Thiago confirmar e você pagar a entrada.</p>
   </form>
 </dialog>
 <script src="reservas.js"></script>

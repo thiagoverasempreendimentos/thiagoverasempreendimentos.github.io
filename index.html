@@ -91,6 +91,11 @@ dialog{border:0;padding:0;background:transparent;max-width:96vw;max-height:94vh;
 dialog::backdrop{background:rgba(10,7,5,.88)}
 dialog img{max-height:90vh;max-width:96vw;border-radius:10px;margin:auto}
 dialog .x{position:absolute;top:-14px;right:-6px;width:42px;height:42px;border-radius:50%;border:0;background:#fff;color:#000;font-size:1.4rem;cursor:pointer}
+.vid{margin-top:14px;display:block;width:100%;max-width:340px;border-radius:var(--radius);background:#000;aspect-ratio:9/16;object-fit:cover}
+.vid.wide{max-width:640px;aspect-ratio:16/9}
+.vidbox{margin-top:28px}
+.vidbox h3{margin:0 0 4px;font-size:1.15rem}
+.vidbox p{margin:0;color:var(--muted);font-size:.95rem}
 dialog.book{border:0;border-radius:18px;padding:0;width:min(520px,calc(100vw - 24px));max-height:calc(100vh - 24px);overflow:auto;background:var(--surface);color:var(--ink)}
 dialog.book::backdrop{background:rgba(10,7,5,.7)}
 .book form{padding:22px 20px 20px;display:grid;gap:14px}
@@ -230,6 +235,14 @@ dialog.book::backdrop{background:rgba(10,7,5,.7)}
         <button type="button"><img loading="lazy" src="img/obra-galpao-interno.jpg" alt="Interior de galpão amplo com telhado metálico"></button>
         <button type="button"><img loading="lazy" src="img/obra-comercial.jpg" alt="Fachada comercial de farmácia à noite"></button>
       </div>
+      <div class="vidbox">
+        <h3>Veja uma obra em andamento</h3>
+        <p>Um passeio rápido pela construção de uma casa.</p>
+        <video class="vid" controls playsinline preload="none" poster="video/obra.jpg" aria-label="Vídeo de uma obra em andamento">
+          <source src="video/obra.mp4" type="video/mp4">
+          Seu navegador não reproduz este vídeo.
+        </video>
+      </div>
     </div>
   </section>
 
@@ -275,6 +288,21 @@ dialog.book::backdrop{background:rgba(10,7,5,.7)}
 <dialog id="zoom"><button class="x" aria-label="Fechar" type="button">×</button><img alt=""></dialog>
 
 <script src="casas.js"></script>
+<script>
+(function(){
+  (window.CASAS||[]).forEach(function(c){
+    if(!c.video) return;
+    var box=document.getElementById('casa-'+c.id); if(!box) return;
+    var v=document.createElement('video');
+    v.className='vid'+(c.videoHorizontal?' wide':'');
+    v.controls=true; v.playsInline=true; v.preload='none';
+    if(c.poster) v.poster=c.poster;
+    v.setAttribute('aria-label','Vídeo: '+c.nome);
+    var s=document.createElement('source'); s.src=c.video; s.type='video/mp4'; v.appendChild(s);
+    box.appendChild(v);
+  });
+})();
+</script>
 <script>
 (function(){
   var d=document.getElementById('zoom'), im=d.querySelector('img');

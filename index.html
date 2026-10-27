@@ -3,272 +3,397 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Thiago Veras Empreendimentos — Casas de temporada no litoral do Piauí</title>
-<meta name="description" content="Casas para temporada em Luís Correia e no litoral do Piauí, e obras residenciais e comerciais da Thiago Veras Construtora & Imobiliária. Reserve pelo WhatsApp.">
-<meta property="og:title" content="Thiago Veras Empreendimentos">
-<meta property="og:description" content="Casas de temporada no litoral do Piauí. Fotos, reservas e pagamento por Pix no WhatsApp.">
-<meta property="og:image" content="img/logo.jpg">
+<title>Thiago Veras Empreendimentos — Casas de temporada em Luís Correia, PI</title>
+<meta name="description" content="Casas para temporada em Luís Correia e no litoral do Piauí. Escolha a casa e as datas no site e reserve direto com o proprietário pelo WhatsApp, com pagamento por Pix.">
+<meta property="og:title" content="Thiago Veras Empreendimentos — Casas de temporada no litoral do Piauí">
+<meta property="og:description" content="Escolha a casa e as datas e reserve direto com o proprietário pelo WhatsApp.">
+<meta property="og:image" content="img/capa.jpg">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta name="theme-color" content="#2b2b2b">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="icon-192.png">
-<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LodgingBusiness",
+  "name": "Thiago Veras Empreendimentos",
+  "legalName": "THIAGO V MUNIZ LTDA",
+  "taxID": "44.226.649/0001-09",
+  "image": "img/capa.jpg",
+  "telephone": "+55 86 99866-2992",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Avenida Prefeito Antonio de Padua da Costa Lima, 838, Centro",
+    "addressLocality": "Luís Correia",
+    "addressRegion": "PI",
+    "postalCode": "64220-000",
+    "addressCountry": "BR"
+  },
+  "sameAs": ["https://www.instagram.com/thiago_veras_empreendimentos/"]
+}
+</script>
 <style>
 :root{
-  --bg:#faf7f2; --surface:#ffffff; --ink:#2a211c; --muted:#6b5f57; --line:#e8e0d6;
-  --brand:#fd4f1a; --brand-ink:#ffffff; --deep:#2b2b2b; --sea:#1f7a8c;
-  --radius:14px;
+  --bg:#faf8f4; --surface:#ffffff; --ink:#1f1d1b; --muted:#625b55; --line:#e9e3da;
+  --brand:#fd4f1a; --brand-dark:#d93f0f; --brand-ink:#ffffff; --deep:#2b2b2b; --sea:#0e7c86; --sand:#f4ede2;
+  --radius:16px; --shadow:0 10px 30px rgba(31,29,27,.08);
+  --font-head:"Montserrat",system-ui,sans-serif; --font-body:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --bg:#1c1613; --surface:#262019; --ink:#f3ece4; --muted:#b5a89d; --line:#3a312a;
-    --brand:#ff6232; --deep:#1b1b1b; --sea:#4fb0c4;
+    --bg:#171513; --surface:#221f1c; --ink:#f3eee8; --muted:#b4aaa0; --line:#38322c;
+    --brand:#ff6232; --brand-dark:#ff7a50; --deep:#111; --sea:#4fb7c1; --sand:#2a2622;
+    --shadow:0 10px 30px rgba(0,0,0,.35);
   }
 }
+:root[data-theme="dark"]{
+  --bg:#171513; --surface:#221f1c; --ink:#f3eee8; --muted:#b4aaa0; --line:#38322c;
+  --brand:#ff6232; --brand-dark:#ff7a50; --deep:#111; --sea:#4fb7c1; --sand:#2a2622;
+  --shadow:0 10px 30px rgba(0,0,0,.35);
+}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.65 var(--font-body);-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
 a{color:inherit}
-.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+h1,h2,h3{font-family:var(--font-head);letter-spacing:-.015em;line-height:1.12}
+.wrap{max-width:1160px;margin:0 auto;padding:0 16px}
+.eyebrow{font:700 .78rem/1 var(--font-head);letter-spacing:.16em;text-transform:uppercase;color:var(--brand);margin:0 0 12px}
+section{padding:clamp(56px,9vw,104px) 0}
+section h2{font-size:clamp(1.7rem,4.2vw,2.6rem);margin:0 0 12px}
+.lead{color:var(--muted);max-width:44em;margin:0 0 36px;font-size:1.05rem}
 
-header.top{position:sticky;top:0;z-index:20;background:#2b2b2b;color:#fff;border-bottom:3px solid var(--brand)}
-header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;height:78px}
-.logo{display:flex;align-items:center;text-decoration:none}
-.logo img{height:66px;width:auto}
-nav.menu{display:flex;gap:22px;font-size:.95rem}
-nav.menu a{text-decoration:none;color:#d8d2cc}
+/* botões */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--brand);color:var(--brand-ink);text-decoration:none;font:700 .98rem/1 var(--font-head);padding:15px 22px;border-radius:999px;border:0;cursor:pointer;transition:background .2s,transform .2s}
+.btn:hover{background:var(--brand-dark)}
+.btn:active{transform:translateY(1px)}
+.btn.small{padding:11px 16px;font-size:.88rem}
+.btn.ghost{background:transparent;color:inherit;box-shadow:inset 0 0 0 1.5px currentColor}
+.btn.ghost:hover{background:rgba(127,127,127,.12)}
+.btn svg{width:18px;height:18px;flex:none}
+.btn:focus-visible,.icon-btn:focus-visible,a:focus-visible,button:focus-visible{outline:3px solid var(--brand);outline-offset:3px}
+
+/* topo */
+header.top{position:sticky;top:0;z-index:40;background:rgba(43,43,43,.96);backdrop-filter:blur(8px);color:#fff}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;height:72px}
+.logo{display:flex;align-items:center}
+.logo img{height:58px;width:auto}
+nav.menu{display:flex;gap:26px;font:600 .92rem var(--font-body)}
+nav.menu a{text-decoration:none;color:#d9d3cc}
 nav.menu a:hover{color:#fff}
-.btn{display:inline-flex;align-items:center;gap:8px;background:var(--brand);color:var(--brand-ink);text-decoration:none;font-weight:700;padding:12px 20px;border-radius:999px;border:0;cursor:pointer;font-size:1rem}
-.btn:hover{filter:brightness(1.07)}
-.btn.small{padding:9px 16px;font-size:.92rem}
-.btn.ghost{background:transparent;color:inherit;border:1.5px solid currentColor}
-@media(max-width:760px){nav.menu{display:none}}
+@media(max-width:860px){nav.menu{display:none}}
 
-.hero{position:relative;color:#fff;background:var(--deep)}
-.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,14,10,.35),rgba(20,14,10,.78))}
-.hero .wrap{position:relative;z-index:1;padding-top:clamp(90px,16vw,170px);padding-bottom:clamp(70px,12vw,130px)}
-.hero h1{font-size:clamp(2rem,6vw,3.6rem);line-height:1.08;margin:0 0 16px;max-width:15em;letter-spacing:-.01em}
-.hero p{font-size:clamp(1.05rem,2.4vw,1.3rem);max-width:34em;margin:0 0 28px;opacity:.95}
+/* capa */
+.hero{position:relative;min-height:min(88vh,760px);display:flex;align-items:flex-end;color:#fff;background:var(--deep);overflow:hidden}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,12,10,.15) 0%,rgba(15,12,10,.25) 40%,rgba(15,12,10,.82) 100%)}
+.hero .wrap{position:relative;z-index:1;width:100%;padding-top:120px;padding-bottom:clamp(48px,9vw,96px)}
+.hero .tag{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.14);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.25);padding:7px 14px;border-radius:999px;font:600 .82rem var(--font-body);margin-bottom:18px}
+.hero h1{font-size:clamp(2.2rem,6.6vw,4.4rem);margin:0 0 16px;max-width:13em;text-shadow:0 2px 24px rgba(0,0,0,.25)}
+.hero p{font-size:clamp(1.05rem,2.4vw,1.28rem);max-width:33em;margin:0 0 30px;color:#f1ece6}
 .hero .row{display:flex;flex-wrap:wrap;gap:12px}
+.hero .btn.ghost{color:#fff}
+.credit{position:absolute;right:12px;bottom:8px;z-index:1;font-size:.7rem;color:rgba(255,255,255,.7)}
 
-section{padding:clamp(48px,8vw,88px) 0}
-section h2{font-size:clamp(1.6rem,4vw,2.3rem);line-height:1.15;margin:0 0 10px;letter-spacing:-.01em}
-.lead{color:var(--muted);max-width:40em;margin:0 0 32px}
+/* faixa de confiança */
+.trust{background:var(--surface);border-bottom:1px solid var(--line);padding:0}
+.trust ul{list-style:none;margin:0 auto;padding:22px 16px;display:grid;grid-template-columns:repeat(4,1fr);gap:18px;max-width:1160px}
+.trust li{display:flex;align-items:center;gap:12px;font-weight:600;font-size:.95rem}
+.trust li span{display:block;font-weight:400;color:var(--muted);font-size:.85rem}
+.ico{flex:none;width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:color-mix(in srgb,var(--brand) 13%,transparent);color:var(--brand)}
+.ico svg{width:22px;height:22px}
+@media(max-width:860px){.trust ul{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.trust ul{grid-template-columns:1fr}}
 
-.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin-top:8px}
-.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
-.step b{display:block;font-size:1.05rem;margin-bottom:4px}
+/* casas */
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px}
+@media(max-width:380px){.cards{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow)}
+.card .cover{position:relative;padding:0;border:0;background:var(--line);aspect-ratio:4/3;cursor:zoom-in;overflow:hidden}
+.card .cover img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.card .cover:hover img{transform:scale(1.04)}
+.card .count{position:absolute;right:12px;bottom:12px;background:rgba(0,0,0,.6);color:#fff;font:600 .78rem var(--font-body);padding:5px 10px;border-radius:999px;display:flex;align-items:center;gap:6px}
+.card .count svg{width:14px;height:14px}
+.card .body{padding:20px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card h3{margin:0;font-size:1.2rem}
+.card .city{margin:-4px 0 0;color:var(--muted);font-size:.9rem}
+.card .desc{margin:0;color:var(--muted);font-size:.95rem}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:2px 0}
+.chips span{background:var(--sand);color:var(--ink);font-size:.8rem;font-weight:600;padding:5px 10px;border-radius:999px}
+.card .foot{margin-top:auto;padding-top:12px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.price{font-size:.88rem;color:var(--muted)}
+.price b{font:800 1.25rem var(--font-head);color:var(--ink)}
+.card .acts{display:flex;gap:8px}
+.card video{width:100%;aspect-ratio:9/16;max-height:420px;object-fit:cover;background:#000;border-radius:12px}
+.card video.wide{aspect-ratio:16/9}
+
+/* como reservar */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:s}
+@media(max-width:760px){.steps{grid-template-columns:1fr}}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+.step::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--brand);color:#fff;font:800 1rem var(--font-head);margin-bottom:14px}
+.step b{display:block;font:700 1.08rem var(--font-head);margin-bottom:6px}
 .step span{color:var(--muted);font-size:.95rem}
-.step i{font-style:normal;display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--brand);color:#fff;font-weight:800;margin-bottom:10px}
 
-.house{margin-top:44px}
-.house-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:4px}
-.house h3{font-size:1.3rem;margin:0}
-.house p{margin:0 0 14px;color:var(--muted)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
-.grid button{padding:0;border:0;background:var(--line);border-radius:var(--radius);overflow:hidden;cursor:zoom-in;aspect-ratio:4/3;display:block}
-.grid button img{width:100%;height:100%;object-fit:cover;transition:transform .35s}
-.grid button:hover img{transform:scale(1.04)}
-.grid button:focus-visible{outline:3px solid var(--brand);outline-offset:2px}
+/* região */
+.region{background:var(--sand)}
+.region .grid{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(24px,5vw,60px);align-items:center}
+@media(max-width:860px){.region .grid{grid-template-columns:1fr}}
+.region .pics{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.region .pics img{border-radius:var(--radius);width:100%;aspect-ratio:3/4;object-fit:cover}
+.region .pics img:first-child{margin-top:28px}
+ul.ticks{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:10px}
+ul.ticks li{display:flex;gap:10px}
+ul.ticks li::before{content:"";flex:none;width:20px;height:20px;margin-top:3px;border-radius:50%;background:var(--brand) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E") center/12px no-repeat}
 
-.alt{background:var(--surface);border-block:1px solid var(--line)}
-.two{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(20px,5vw,56px);align-items:center}
-.two img{border-radius:var(--radius);width:100%;aspect-ratio:4/5;object-fit:cover}
-@media(max-width:820px){.two{grid-template-columns:1fr}.two img{aspect-ratio:4/3}}
-ul.ticks{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:8px}
-ul.ticks li::before{content:"✓";color:var(--brand);font-weight:800;margin-right:10px}
+/* construtora */
+.build{background:var(--deep);color:#f3eee8}
+.build .lead{color:#c9c1b8}
+.build .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,60px);align-items:center}
+@media(max-width:860px){.build .grid{grid-template-columns:1fr}}
+.build .placa{border-radius:var(--radius);aspect-ratio:4/5;object-fit:cover;width:100%}
+@media(max-width:860px){.build .placa{aspect-ratio:4/3}}
+.build .btn.ghost{color:#f3eee8}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-top:32px}
+.gallery button{padding:0;border:0;border-radius:12px;overflow:hidden;aspect-ratio:4/3;cursor:zoom-in;background:#000}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.gallery button:hover img{transform:scale(1.05)}
+.build .video{margin-top:32px;display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center}
+.build .video video{width:min(300px,100%);aspect-ratio:9/16;border-radius:var(--radius);background:#000;object-fit:cover}
+@media(max-width:640px){.build .video{grid-template-columns:1fr}}
 
-.contact{background:var(--deep);color:#f3ece4}
-.contact .lead{color:#cbbfb4}
-.contact .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
-.contact .btn.ghost{color:#f3ece4}
+/* perguntas */
+.faq{max-width:820px}
+.faq details{background:var(--surface);border:1px solid var(--line);border-radius:14px;margin-bottom:10px}
+.faq summary{cursor:pointer;list-style:none;padding:18px 52px 18px 20px;font:700 1rem var(--font-head);position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:20px;top:50%;transform:translateY(-50%);font-size:1.5rem;color:var(--brand);font-weight:400}
+.faq details[open] summary::after{content:"–"}
+.faq details p{margin:0;padding:0 20px 18px;color:var(--muted)}
 
-footer{padding:34px 0 46px;font-size:.88rem;color:var(--muted)}
-footer .wrap{display:grid;gap:6px}
-footer a{color:inherit}
+/* chamada final */
+.cta{background:linear-gradient(135deg,var(--brand),#ff7a3d);color:#fff;text-align:center}
+.cta h2{margin-bottom:10px}
+.cta p{margin:0 auto 28px;max-width:36em;color:#fff3ec}
+.cta .btn{background:#fff;color:var(--deep)}
+.cta .btn:hover{background:#f6efe8}
 
-dialog{border:0;padding:0;background:transparent;max-width:96vw;max-height:94vh;overflow:visible}
-dialog::backdrop{background:rgba(10,7,5,.88)}
-dialog img{max-height:90vh;max-width:96vw;border-radius:10px;margin:auto}
-dialog .x{position:absolute;top:-14px;right:-6px;width:42px;height:42px;border-radius:50%;border:0;background:#fff;color:#000;font-size:1.4rem;cursor:pointer}
-.vid{margin-top:14px;display:block;width:100%;max-width:340px;border-radius:var(--radius);background:#000;aspect-ratio:9/16;object-fit:cover}
-.vid.wide{max-width:640px;aspect-ratio:16/9}
-.vidbox{margin-top:28px}
-.vidbox h3{margin:0 0 4px;font-size:1.15rem}
-.vidbox p{margin:0;color:var(--muted);font-size:.95rem}
-dialog.book{border:0;border-radius:18px;padding:0;width:min(520px,calc(100vw - 24px));max-height:calc(100vh - 24px);overflow:auto;background:var(--surface);color:var(--ink)}
+footer{background:var(--deep);color:#bdb5ac;padding:44px 0 90px;font-size:.9rem}
+footer .grid{display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:start}
+@media(max-width:760px){footer .grid{grid-template-columns:1fr}}
+footer img{height:70px;width:auto}
+footer b{color:#fff}
+footer a{color:#e7e0d8}
+footer .links{display:grid;gap:6px}
+
+/* WhatsApp flutuante */
+.wa-float{position:fixed;right:18px;bottom:18px;z-index:50;width:60px;height:60px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;box-shadow:0 10px 26px rgba(0,0,0,.28);transition:transform .2s}
+.wa-float:hover{transform:scale(1.06)}
+.wa-float svg{width:32px;height:32px}
+
+/* diálogos */
+dialog{border:0;padding:0}
+dialog.gal{background:transparent;max-width:100vw;max-height:100vh;width:100vw;height:100vh;overflow:hidden}
+dialog.gal::backdrop{background:rgba(8,6,5,.94)}
+.gal .stage{position:absolute;inset:0;display:grid;place-items:center;padding:56px 12px 70px}
+.gal .stage img{max-width:100%;max-height:100%;object-fit:contain;border-radius:8px}
+.gal .cap{position:absolute;left:0;right:0;bottom:18px;text-align:center;color:#e8e2dc;font-size:.92rem}
+.icon-btn{position:absolute;width:46px;height:46px;border-radius:50%;border:0;background:rgba(255,255,255,.14);color:#fff;font-size:1.6rem;line-height:1;cursor:pointer;display:grid;place-items:center}
+.icon-btn:hover{background:rgba(255,255,255,.26)}
+.gal .x{top:12px;right:12px}
+.gal .prev{left:12px;top:50%;transform:translateY(-50%)}
+.gal .next{right:12px;top:50%;transform:translateY(-50%)}
+
+dialog.book{border-radius:20px;width:min(520px,calc(100vw - 24px));max-height:calc(100vh - 24px);overflow:auto;background:var(--surface);color:var(--ink)}
 dialog.book::backdrop{background:rgba(10,7,5,.7)}
-.book form{padding:22px 20px 20px;display:grid;gap:14px}
-.book h3{margin:0;font-size:1.25rem;padding-right:34px}
+.book form{padding:24px 20px 20px;display:grid;gap:14px}
+.book h3{margin:0;font-size:1.25rem;padding-right:40px}
 .book .sub{margin:0;color:var(--muted);font-size:.95rem}
-.book .xb{position:absolute;top:10px;right:10px;width:38px;height:38px;border-radius:50%;border:0;background:var(--line);color:var(--ink);font-size:1.3rem;cursor:pointer}
-.book label{display:grid;gap:6px;font-size:.9rem;font-weight:600}
-.book input{font:inherit;padding:12px;border:1.5px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);min-width:0}
-.book input:focus-visible{outline:3px solid var(--brand);outline-offset:1px}
+.book .xb{position:absolute;top:12px;right:12px;width:40px;height:40px;border-radius:50%;border:0;background:var(--line);color:var(--ink);font-size:1.3rem;cursor:pointer}
+.book label{display:grid;gap:6px;font-size:.88rem;font-weight:600}
+.book input{font:inherit;padding:12px;border:1.5px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink);min-width:0;width:100%}
 .book .two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .book .resumo{background:var(--bg);border:1px dashed var(--line);border-radius:12px;padding:12px 14px;font-size:.95rem;min-height:3.2em}
-.book .resumo b{font-size:1.1rem}
+.book .resumo b{font-size:1.05rem}
 .book .erro{color:#b3261e;font-weight:600;margin:0;font-size:.92rem}
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .book .erro{color:#ff8a80}}
-.book .btn{justify-content:center;width:100%}
-.book .btn[disabled]{opacity:.5;cursor:not-allowed}
+.book .btn{width:100%}
 .book .nota{margin:0;color:var(--muted);font-size:.82rem;text-align:center}
-.wa-float{position:fixed;right:16px;bottom:16px;z-index:30;box-shadow:0 8px 24px rgba(0,0,0,.28)}
 </style>
 </head>
 <body>
 
 <header class="top">
   <div class="wrap">
-    <a class="logo" href="#topo" aria-label="Thiago Veras Empreendimentos"><img src="img/logo.png" alt="Thiago Veras Empreendimentos" width="93" height="66"></a>
+    <a class="logo" href="#topo" aria-label="Thiago Veras Empreendimentos, início"><img src="img/logo.png" alt="Thiago Veras Empreendimentos" width="82" height="58"></a>
     <nav class="menu" aria-label="Seções">
-      <a href="#como">Como reservar</a>
       <a href="#casas">Casas</a>
-      <a href="#obras">Construtora</a>
-      <a href="#contato">Contato</a>
+      <a href="#como">Como reservar</a>
+      <a href="#regiao">A região</a>
+      <a href="#construtora">Construtora</a>
+      <a href="#duvidas">Dúvidas</a>
     </nav>
-    <a class="btn small" href="https://wa.me/5586998662992?text=Ol%C3%A1!%20Quero%20saber%20sobre%20as%20casas%20de%20temporada." rel="noopener">WhatsApp</a>
+    <a class="btn small wa-link" href="#" rel="noopener">Reservar</a>
   </div>
 </header>
 
 <main id="topo">
-  <div class="hero">
-    <img src="img/hero.jpg" alt="Casa amarela de dois andares com quintal amplo, no litoral do Piauí" fetchpriority="high">
+  <section class="hero" style="padding:0">
+    <img src="img/capa.jpg" alt="Litoral de Luís Correia, Piauí" fetchpriority="high">
     <div class="wrap">
-      <h1>Casas de temporada no litoral do Piauí</h1>
-      <p>Luís Correia e região. Veja fotos, confira datas e reserve conversando direto no WhatsApp, com pagamento por Pix.</p>
+      <div class="tag">📍 Luís Correia · Litoral do Piauí</div>
+      <h1>Sua temporada no litoral do Piauí começa aqui</h1>
+      <p>Casas com piscina e espaço para a família, perto das praias de Luís Correia. Escolha a casa e as datas e reserve direto com o proprietário.</p>
       <div class="row">
-        <a class="btn" href="https://wa.me/5586998662992?text=Ol%C3%A1!%20Quero%20saber%20sobre%20as%20casas%20de%20temporada." rel="noopener">Reservar pelo WhatsApp</a>
-        <a class="btn ghost" href="#casas">Ver as casas</a>
+        <a class="btn" href="#casas">Ver as casas</a>
+        <a class="btn ghost wa-link" href="#" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg>
+          Falar no WhatsApp</a>
       </div>
     </div>
-  </div>
+    <span class="credit" id="credito-capa"></span>
+  </section>
 
-  <section id="como">
+  <section class="trust" aria-label="Por que reservar com a gente">
+    <ul>
+      <li><i class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg></i><div>Direto com o proprietário<span>Sem intermediários</span></div></li>
+      <li><i class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></i><div>Empresa com CNPJ<span>Construtora &amp; Imobiliária</span></div></li>
+      <li><i class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h3"/></svg></i><div>Pagamento por Pix<span>Entrada para garantir a data</span></div></li>
+      <li><i class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg></i><div>Atendimento no WhatsApp<span>Resposta rápida</span></div></li>
+    </ul>
+  </section>
+
+  <section id="casas">
     <div class="wrap">
-      <h2>Reservar é simples</h2>
-      <p class="lead">Nosso atendimento no WhatsApp responde na hora, a qualquer horário.</p>
+      <p class="eyebrow">Casas de temporada</p>
+      <h2>Escolha a sua casa</h2>
+      <p class="lead">Toque na foto para ver mais imagens. Em “Reservar”, escolha as datas e finalize direto no WhatsApp do Thiago.</p>
+      <div class="cards" id="lista-casas"></div>
+    </div>
+  </section>
+
+  <section id="como" style="padding-top:0">
+    <div class="wrap">
+      <p class="eyebrow">Simples e seguro</p>
+      <h2>Como reservar</h2>
+      <p class="lead">Em poucos minutos a sua data está encaminhada.</p>
       <div class="steps">
-        <div class="step"><i>1</i><b>Escolha a casa</b><span>Diga o código ou o nome da casa e receba fotos e vídeo.</span></div>
-        <div class="step"><i>2</i><b>Informe as datas</b><span>Confira na hora se o período está livre e o valor total.</span></div>
-        <div class="step"><i>3</i><b>Pague a entrada no Pix</b><span>Receba o código Pix e a reserva fica garantida.</span></div>
-        <div class="step"><i>4</i><b>Aproveite</b><span>Combine a chegada com a nossa equipe e é só curtir.</span></div>
+        <div class="step"><b>Escolha a casa e as datas</b><span>Veja as fotos, toque em “Reservar” e informe entrada, saída e número de pessoas.</span></div>
+        <div class="step"><b>Finalize no WhatsApp</b><span>A mensagem já vai pronta para o Thiago, que confirma a disponibilidade e o valor.</span></div>
+        <div class="step"><b>Pague a entrada por Pix</b><span>Com a entrada paga, a data fica garantida. O restante é combinado direto com ele.</span></div>
       </div>
     </div>
   </section>
 
-  <section id="casas" class="alt">
-    <div class="wrap">
-      <h2>Nossas casas</h2>
-      <p class="lead">Toque em uma foto para ampliar. Para valores, datas livres e vídeos, chame no WhatsApp.</p>
-
-      <div class="house" id="casa-pergolado" data-casa="pergolado">
-        <div class="house-head"><h3>Casa com pergolado e piscina</h3><button type="button" class="btn small reservar" data-casa="pergolado">Reservar esta casa</button></div>
-        <p>Jardim, área coberta e piscina, perto da praia.</p>
-        <div class="grid">
-          <button type="button"><img loading="lazy" src="img/casa-pergolado-1.jpg" alt="Área coberta com vista para o jardim e a piscina"></button>
-          <button type="button"><img loading="lazy" src="img/casa-pergolado-2.jpg" alt="Jardim com mesa de pedra e piscina ao fundo"></button>
-        </div>
-      </div>
-
-      <div class="house" id="casa-piscina" data-casa="piscina">
-        <div class="house-head"><h3>Casa com piscina e área gourmet</h3><button type="button" class="btn small reservar" data-casa="piscina">Reservar esta casa</button></div>
-        <p>Varanda ampla, churrasqueira e piscina para a família toda.</p>
-        <div class="grid">
-          <button type="button"><img loading="lazy" src="img/casa-piscina-1.jpg" alt="Piscina e deck ao entardecer"></button>
-          <button type="button"><img loading="lazy" src="img/casa-piscina-2.jpg" alt="Área gourmet com churrasqueira e mesa de madeira"></button>
-          <button type="button"><img loading="lazy" src="img/casa-piscina-3.jpg" alt="Sala ampla com iluminação em gesso e rede"></button>
-          <button type="button"><img loading="lazy" src="img/casa-piscina-4.jpg" alt="Varanda com piso claro ao lado da piscina"></button>
-        </div>
-      </div>
-
-      <div class="house" id="casa-amarela" data-casa="amarela">
-        <div class="house-head"><h3>Casa amarela</h3><button type="button" class="btn small reservar" data-casa="amarela">Reservar esta casa</button></div>
-        <p>Sobrado espaçoso com quintal amplo e área aberta.</p>
-        <div class="grid">
-          <button type="button"><img loading="lazy" src="img/casa-amarela-1.jpg" alt="Fachada da casa amarela com quintal de pedra"></button>
-          <button type="button"><img loading="lazy" src="img/casa-amarela-2.jpg" alt="Lateral da casa amarela com varanda"></button>
-        </div>
-      </div>
-
-      <div class="house" id="casa-moderna" data-casa="moderna">
-        <div class="house-head"><h3>Casa moderna</h3><button type="button" class="btn small reservar" data-casa="moderna">Reservar esta casa</button></div>
-        <p>Arquitetura contemporânea, piso de porcelanato e jardim.</p>
-        <div class="grid">
-          <button type="button"><img loading="lazy" src="img/casa-moderna-1.jpg" alt="Jardim com palmeira e caminho de pedras até a entrada"></button>
-          <button type="button"><img loading="lazy" src="img/casa-moderna-2.jpg" alt="Sala integrada com forro rebaixado e piso de porcelanato"></button>
-          <button type="button"><img loading="lazy" src="img/casa-moderna-3.jpg" alt="Cozinha com balcão de pedra escura"></button>
-          <button type="button"><img loading="lazy" src="img/casa-moderna-4.jpg" alt="Entrada iluminada à noite"></button>
-        </div>
-      </div>
-
-      <div class="house" id="casa-garagem" data-casa="garagem">
-        <div class="house-head"><h3>Casa com garagem</h3><button type="button" class="btn small reservar" data-casa="garagem">Reservar esta casa</button></div>
-        <p>Fachada moderna com garagem coberta.</p>
-        <div class="grid">
-          <button type="button"><img loading="lazy" src="img/casa-fachada-1.jpg" alt="Fachada da casa com pedra e iluminação à noite"></button>
-          <button type="button"><img loading="lazy" src="img/casa-fachada-2.jpg" alt="Fachada da casa com portão branco e parede de pedra"></button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="obras">
-    <div class="wrap two">
+  <section id="regiao" class="region">
+    <div class="wrap grid">
       <div>
-        <h2>Também construímos</h2>
-        <p class="lead" style="margin-bottom:0">A Thiago Veras Construtora &amp; Imobiliária executa obras residenciais e comerciais na região, do projeto à entrega das chaves.</p>
+        <p class="eyebrow">A região</p>
+        <h2>Luís Correia, o litoral do Piauí</h2>
+        <p class="lead" style="margin-bottom:0">Praias de mar calmo e água morna, coqueirais e pôr do sol à beira-mar. É uma ótima base para conhecer o litoral piauiense e a região do Delta do Parnaíba.</p>
         <ul class="ticks">
-          <li>Casas e sobrados residenciais</li>
-          <li>Galpões e obras comerciais</li>
-          <li>Acompanhamento da obra do início ao fim</li>
+          <li>Praias como Atalaia, Coqueiro e Macapá</li>
+          <li>Perto de Parnaíba e da Pedra do Sal</li>
+          <li>Passeios para o Delta do Parnaíba</li>
+          <li>Peixes e frutos do mar frescos nas barracas de praia</li>
         </ul>
-        <p style="margin-top:22px"><a class="btn ghost" style="color:var(--ink)" href="https://wa.me/5586998662992?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento%20de%20obra." rel="noopener">Pedir orçamento</a></p>
       </div>
-      <img loading="lazy" src="img/placa.jpg" alt="Fachada com a placa Thiago Veras Construtora e Imobiliária">
-    </div>
-    <div class="wrap" style="margin-top:28px">
-      <div class="grid">
-        <button type="button"><img loading="lazy" src="img/obra-sobrado.jpg" alt="Sobrado em construção com andaime"></button>
-        <button type="button"><img loading="lazy" src="img/obra-casa.jpg" alt="Casa em construção com entrada e calçada de pedra"></button>
-        <button type="button"><img loading="lazy" src="img/obra-galpao.jpg" alt="Fachada de galpão de blocos com portão de enrolar"></button>
-        <button type="button"><img loading="lazy" src="img/obra-galpao-interno.jpg" alt="Interior de galpão amplo com telhado metálico"></button>
-        <button type="button"><img loading="lazy" src="img/obra-comercial.jpg" alt="Fachada comercial de farmácia à noite"></button>
-      </div>
-      <div class="vidbox">
-        <h3>Veja uma obra em andamento</h3>
-        <p>Um passeio rápido pela construção de uma casa.</p>
-        <video class="vid" controls playsinline preload="none" poster="video/obra.jpg" aria-label="Vídeo de uma obra em andamento">
-          <source src="video/obra.mp4" type="video/mp4">
-          Seu navegador não reproduz este vídeo.
-        </video>
+      <div class="pics">
+        <img loading="lazy" src="img/casa-amarela-1.jpg" alt="Casa com quintal amplo e coqueiros, sob céu azul do litoral">
+        <img loading="lazy" src="img/casa-piscina-1.jpg" alt="Piscina ao entardecer em casa de temporada">
       </div>
     </div>
   </section>
 
-  <section id="contato" class="contact">
+  <section id="construtora" class="build">
     <div class="wrap">
-      <h2>Fale com a gente</h2>
-      <p class="lead">Atendimento pelo WhatsApp, com resposta imediata. Para falar com uma pessoa, é só pedir.</p>
-      <div class="row">
-        <a class="btn" href="https://wa.me/5586998662992?text=Ol%C3%A1!%20Quero%20saber%20sobre%20as%20casas%20de%20temporada." rel="noopener">Chamar no WhatsApp</a>
-        <a class="btn ghost" href="https://www.instagram.com/thiago_veras_empreendimentos/" rel="noopener">Instagram</a>
+      <div class="grid">
+        <div>
+          <p class="eyebrow">Thiago Veras Construtora &amp; Imobiliária</p>
+          <h2>Também construímos</h2>
+          <p class="lead" style="margin-bottom:0">Obras residenciais e comerciais em Luís Correia e região, do projeto à entrega das chaves.</p>
+          <ul class="ticks">
+            <li>Casas e sobrados residenciais</li>
+            <li>Galpões e obras comerciais</li>
+            <li>Acompanhamento da obra do início ao fim</li>
+          </ul>
+          <p style="margin-top:26px"><a class="btn ghost wa-link" data-msg="Olá, Thiago! Quero um orçamento de obra." href="#" rel="noopener">Pedir orçamento</a></p>
+        </div>
+        <img class="placa" loading="lazy" src="img/placa.jpg" alt="Fachada com a placa Thiago Veras Construtora e Imobiliária">
       </div>
+      <div class="gallery" id="galeria-obras">
+        <button type="button" data-i="0"><img loading="lazy" src="img/obra-sobrado.jpg" alt="Sobrado em construção com andaime"></button>
+        <button type="button" data-i="1"><img loading="lazy" src="img/obra-casa.jpg" alt="Casa em construção com entrada e calçada de pedra"></button>
+        <button type="button" data-i="2"><img loading="lazy" src="img/obra-galpao.jpg" alt="Fachada de galpão de blocos com portão de enrolar"></button>
+        <button type="button" data-i="3"><img loading="lazy" src="img/obra-galpao-interno.jpg" alt="Interior de galpão amplo com telhado metálico"></button>
+        <button type="button" data-i="4"><img loading="lazy" src="img/obra-comercial.jpg" alt="Fachada comercial iluminada à noite"></button>
+      </div>
+      <div class="video">
+        <video controls playsinline preload="none" poster="video/obra.jpg" aria-label="Vídeo de uma obra em andamento">
+          <source src="video/obra.mp4" type="video/mp4">
+        </video>
+        <div><h3 style="margin:0 0 6px">Veja uma obra em andamento</h3><p style="margin:0;color:#c9c1b8">Um passeio rápido pela construção de uma casa.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="duvidas">
+    <div class="wrap">
+      <p class="eyebrow">Dúvidas</p>
+      <h2>Perguntas frequentes</h2>
+      <div class="faq">
+        <details><summary>Como faço a reserva?</summary><p>Escolha a casa, toque em “Reservar”, informe as datas e o número de pessoas e finalize no WhatsApp. O Thiago confirma a disponibilidade e o valor.</p></details>
+        <details><summary>Quando a reserva fica garantida?</summary><p>Depois que o Thiago confirma a disponibilidade e você paga a entrada por Pix. Até lá, a data não está bloqueada.</p></details>
+        <details><summary>Como é o pagamento?</summary><p>Uma entrada por Pix garante a data. A forma de pagar o restante é combinada direto com o Thiago no WhatsApp.</p></details>
+        <details><summary>Posso ver mais fotos ou vídeos da casa?</summary><p>Sim. Peça no WhatsApp, que o Thiago envia mais imagens e tira suas dúvidas sobre a casa.</p></details>
+        <details><summary>Qual o endereço das casas?</summary><p>As casas ficam em Luís Correia e região, no litoral do Piauí. A localização exata é enviada na confirmação da reserva.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap">
+      <h2>Garanta sua data no litoral</h2>
+      <p>Feriados e férias costumam lotar cedo. Chame o Thiago e confira a disponibilidade.</p>
+      <a class="btn wa-link" href="#" rel="noopener">Falar no WhatsApp</a>
     </div>
   </section>
 </main>
 
 <footer>
-  <div class="wrap">
-    <div><b>THIAGO V MUNIZ LTDA</b> · CNPJ 44.226.649/0001-09</div>
-    <div>Avenida Prefeito Antonio de Padua da Costa Lima, 838, Centro · Luís Correia, PI · CEP 64220-000</div>
-    <div>WhatsApp (86) 99866-2992 · <a href="https://163-176-74-32.sslip.io/privacidade">Política de privacidade</a></div>
+  <div class="wrap grid">
+    <img src="img/logo.png" alt="Thiago Veras Empreendimentos" width="99" height="70">
+    <div>
+      <div><b>THIAGO V MUNIZ LTDA</b> · CNPJ 44.226.649/0001-09</div>
+      <div>Avenida Prefeito Antonio de Padua da Costa Lima, 838, Centro · Luís Correia, PI · CEP 64220-000</div>
+      <div>WhatsApp (86) 99866-2992</div>
+    </div>
+    <div class="links">
+      <a href="https://www.instagram.com/thiago_veras_empreendimentos/" rel="noopener">Instagram</a>
+      <a href="https://163-176-74-32.sslip.io/privacidade" rel="noopener">Política de privacidade</a>
+    </div>
   </div>
 </footer>
 
+<a class="wa-float wa-link" href="#" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg>
+</a>
+
+<dialog id="gal" class="gal" aria-label="Fotos">
+  <div class="stage"><img alt=""></div>
+  <p class="cap"></p>
+  <button type="button" class="icon-btn x" aria-label="Fechar">×</button>
+  <button type="button" class="icon-btn prev" aria-label="Foto anterior">‹</button>
+  <button type="button" class="icon-btn next" aria-label="Próxima foto">›</button>
+</dialog>
+
 <dialog id="book" class="book" aria-labelledby="book-titulo">
   <button type="button" class="xb" aria-label="Fechar">×</button>
-  <form method="dialog" id="book-form" novalidate>
+  <form method="dialog" novalidate>
     <div><h3 id="book-titulo">Reservar</h3><p class="sub">Escolha as datas e finalize direto no WhatsApp do Thiago.</p></div>
     <div class="two-col">
       <label>Entrada<input type="date" id="b-in" required></label>
@@ -281,100 +406,154 @@ dialog.book::backdrop{background:rgba(10,7,5,.7)}
     <div class="resumo" id="b-resumo" aria-live="polite">Escolha a entrada e a saída para ver o resumo.</div>
     <p class="erro" id="b-erro" role="alert" hidden></p>
     <a class="btn" id="b-final" href="#" rel="noopener" aria-disabled="true">Finalizar no WhatsApp</a>
-    <p class="nota">A reserva só vale depois que o Thiago confirmar a disponibilidade e combinar o pagamento.</p>
+    <p class="nota">A reserva só vale depois que o Thiago confirmar a disponibilidade e você pagar a entrada.</p>
   </form>
 </dialog>
-
-<dialog id="zoom"><button class="x" aria-label="Fechar" type="button">×</button><img alt=""></dialog>
 
 <script src="casas.js"></script>
 <script>
 (function(){
-  (window.CASAS||[]).forEach(function(c){
-    if(!c.video) return;
-    var box=document.getElementById('casa-'+c.id); if(!box) return;
-    var v=document.createElement('video');
-    v.className='vid'+(c.videoHorizontal?' wide':'');
-    v.controls=true; v.playsInline=true; v.preload='none';
-    if(c.poster) v.poster=c.poster;
-    v.setAttribute('aria-label','Vídeo: '+c.nome);
-    var s=document.createElement('source'); s.src=c.video; s.type='video/mp4'; v.appendChild(s);
-    box.appendChild(v);
-  });
-})();
-</script>
-<script>
-(function(){
-  var d=document.getElementById('zoom'), im=d.querySelector('img');
-  document.querySelectorAll('.grid button').forEach(function(b){
-    b.addEventListener('click',function(){var s=b.querySelector('img');im.src=s.src;im.alt=s.alt;d.showModal();});
-  });
-  d.addEventListener('click',function(e){if(e.target===d||e.target.classList.contains('x'))d.close();});
-})();
-</script>
-<script>
-(function(){
-  var dlg=document.getElementById('book'); if(!dlg||!window.CASAS) return;
-  var inEl=document.getElementById('b-in'), outEl=document.getElementById('b-out'),
-      pesEl=document.getElementById('b-pessoas'), nomeEl=document.getElementById('b-nome'),
-      resumo=document.getElementById('b-resumo'), erro=document.getElementById('b-erro'),
-      fin=document.getElementById('b-final'), titulo=document.getElementById('book-titulo');
-  var casa=null;
-  var brl=new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'});
-  function iso(d){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
-  function parse(v){var p=v.split('-');return new Date(+p[0],+p[1]-1,+p[2]);}
-  function br(d){return String(d.getDate()).padStart(2,'0')+'/'+String(d.getMonth()+1).padStart(2,'0')+'/'+d.getFullYear();}
-  function noites(a,b){return Math.round((b-a)/86400000);}
-  function show(msg){erro.textContent=msg;erro.hidden=!msg;}
-  function lock(msg){fin.setAttribute('aria-disabled','true');fin.removeAttribute('href');fin.style.opacity='.5';fin.style.pointerEvents='none';show(msg||'');}
+  var T = window.THIAGO, CASAS = window.CASAS || [];
+  var brl = new Intl.NumberFormat('pt-BR', {style:'currency', currency:'BRL'});
+  var brl0 = new Intl.NumberFormat('pt-BR', {style:'currency', currency:'BRL', maximumFractionDigits:0});
+  function wa(text){ return 'https://wa.me/' + T.whatsapp + '?text=' + encodeURIComponent(text); }
+  function esc(s){ return String(s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
 
-  function atualizar(){
-    var a=inEl.value, b=outEl.value;
-    if(!a||!b){resumo.textContent='Escolha a entrada e a saída para ver o resumo.';return lock('');}
-    var ci=parse(a), co=parse(b), hoje=parse(iso(new Date()));
-    if(ci<hoje) {resumo.textContent='—';return lock('A entrada não pode ser antes de hoje.');}
-    var n=noites(ci,co);
-    if(n<=0){resumo.textContent='—';return lock('A saída precisa ser depois da entrada.');}
-    if(n<casa.minNoites){resumo.textContent='—';return lock('Mínimo de '+casa.minNoites+' diárias nesta casa.');}
-    var pes=parseInt(pesEl.value,10)||null;
-    if(pes&&casa.capacidade&&pes>casa.capacidade){resumo.textContent='—';return lock('Esta casa acomoda até '+casa.capacidade+' pessoas.');}
-    for(var i=0;i<casa.bloqueios.length;i++){
-      var bi=parse(casa.bloqueios[i][0]), bo=parse(casa.bloqueios[i][1]);
-      if(ci<bo && co>bi){resumo.textContent='—';return lock('Já existe reserva nesse período. Escolha outras datas ou chame o Thiago.');}
+  // Links gerais de WhatsApp
+  document.querySelectorAll('.wa-link').forEach(function(a){
+    a.href = wa(a.dataset.msg || 'Olá, Thiago! Quero saber sobre as casas de temporada.');
+  });
+
+  // Crédito da foto de capa (preencha em casas.js: THIAGO.creditoCapa)
+  if (T.creditoCapa) document.getElementById('credito-capa').textContent = T.creditoCapa;
+
+  // Cartões das casas
+  var lista = document.getElementById('lista-casas');
+  var camIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="2"/><circle cx="12" cy="13" r="3.5"/><path d="M8 6l1.5-2h5L16 6"/></svg>';
+  CASAS.forEach(function(c){
+    var info = [];
+    if (c.quartos) info.push(c.quartos + (c.quartos === 1 ? ' quarto' : ' quartos'));
+    if (c.capacidade) info.push('até ' + c.capacidade + ' pessoas');
+    var el = document.createElement('article');
+    el.className = 'card'; el.id = 'casa-' + c.id;
+    el.innerHTML =
+      '<button type="button" class="cover" aria-label="Ver fotos: ' + esc(c.nome) + '">' +
+        '<img loading="lazy" src="' + esc(c.fotos[0]) + '" alt="' + esc(c.nome) + '">' +
+        (c.fotos.length > 1 ? '<span class="count">' + camIcon + c.fotos.length + ' fotos</span>' : '') +
+      '</button>' +
+      '<div class="body">' +
+        '<h3>' + esc(c.nome) + '</h3>' +
+        ((c.cidade || info.length) ? '<p class="city">' + esc([c.cidade].concat(info).filter(Boolean).join(' · ')) + '</p>' : '') +
+        '<p class="desc">' + esc(c.resumo || '') + '</p>' +
+        '<div class="chips">' + (c.destaques || []).map(function(d){ return '<span>' + esc(d) + '</span>'; }).join('') + '</div>' +
+        '<div class="foot">' +
+          '<div class="price">' + (c.diaria ? 'Diária a partir de<br><b>' + brl0.format(c.diaria) + '</b>' : 'Valor<br><b>sob consulta</b>') + '</div>' +
+          '<div class="acts"><button type="button" class="btn small reservar">Reservar</button></div>' +
+        '</div>' +
+      '</div>';
+    lista.appendChild(el);
+    el.querySelector('.cover').addEventListener('click', function(){ abrirGaleria(c.fotos.map(function(f){ return {src:f, alt:c.nome}; }), 0, c.nome); });
+    el.querySelector('.reservar').addEventListener('click', function(){ abrirReserva(c); });
+    if (c.video) {
+      var v = document.createElement('video');
+      v.controls = true; v.playsInline = true; v.preload = 'none';
+      if (c.videoHorizontal) v.className = 'wide';
+      if (c.poster) v.poster = c.poster;
+      v.setAttribute('aria-label', 'Vídeo: ' + c.nome);
+      var s = document.createElement('source'); s.src = c.video; s.type = 'video/mp4'; v.appendChild(s);
+      el.querySelector('.chips').after(v);
     }
-    var total=casa.diaria? n*casa.diaria : null;
-    resumo.innerHTML='<b>'+casa.nome+'</b><br>'+br(ci)+' → '+br(co)+' · '+n+(n===1?' diária':' diárias')
-      +(pes?' · '+pes+(pes===1?' pessoa':' pessoas'):'')
-      +'<br>'+(total!==null?'Total estimado: <b>'+brl.format(total)+'</b>':'Valor: <b>a combinar com o Thiago</b>');
-    var nome=nomeEl.value.trim();
-    var linhas=['Olá, Thiago! Quero reservar a *'+casa.nome+'*.','',
-      '📅 Entrada: '+br(ci),'📅 Saída: '+br(co)+' ('+n+(n===1?' diária)':' diárias)')];
-    if(pes) linhas.push('👥 '+pes+(pes===1?' pessoa':' pessoas'));
-    if(total!==null) linhas.push('💰 Total estimado: '+brl.format(total));
-    if(nome) linhas.push('','Meu nome: '+nome);
-    show('');
-    fin.href='https://wa.me/'+window.THIAGO.whatsapp+'?text='+encodeURIComponent(linhas.join('\n'));
-    fin.setAttribute('aria-disabled','false');fin.style.opacity='';fin.style.pointerEvents='';
-  }
+  });
 
-  function abrir(id){
-    casa=window.CASAS.filter(function(c){return c.id===id;})[0]; if(!casa) return;
-    titulo.textContent='Reservar: '+casa.nome;
-    var hoje=iso(new Date()); inEl.min=hoje; outEl.min=hoje;
-    inEl.value='';outEl.value='';
-    if(casa.capacidade) pesEl.max=casa.capacidade;
+  // Galeria (fotos das casas e das obras)
+  var gal = document.getElementById('gal'), galImg = gal.querySelector('.stage img'), galCap = gal.querySelector('.cap');
+  var itens = [], atual = 0, titulo = '';
+  function mostrar(i){
+    atual = (i + itens.length) % itens.length;
+    galImg.src = itens[atual].src; galImg.alt = itens[atual].alt;
+    galCap.textContent = titulo + (itens.length > 1 ? ' · ' + (atual + 1) + ' de ' + itens.length : '');
+    gal.querySelector('.prev').hidden = gal.querySelector('.next').hidden = itens.length < 2;
+  }
+  function abrirGaleria(lista, i, t){ itens = lista; titulo = t; mostrar(i); gal.showModal(); }
+  gal.querySelector('.x').addEventListener('click', function(){ gal.close(); });
+  gal.querySelector('.prev').addEventListener('click', function(){ mostrar(atual - 1); });
+  gal.querySelector('.next').addEventListener('click', function(){ mostrar(atual + 1); });
+  gal.addEventListener('click', function(e){ if (e.target === gal || e.target.classList.contains('stage')) gal.close(); });
+  gal.addEventListener('keydown', function(e){ if (e.key === 'ArrowLeft') mostrar(atual - 1); if (e.key === 'ArrowRight') mostrar(atual + 1); });
+  var x0 = null;
+  gal.addEventListener('touchstart', function(e){ x0 = e.touches[0].clientX; }, {passive:true});
+  gal.addEventListener('touchend', function(e){ if (x0 === null) return; var dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) mostrar(atual + (dx < 0 ? 1 : -1)); x0 = null; });
+  var obras = Array.prototype.map.call(document.querySelectorAll('#galeria-obras img'), function(im){ return {src:im.getAttribute('src'), alt:im.alt}; });
+  document.querySelectorAll('#galeria-obras button').forEach(function(b){
+    b.addEventListener('click', function(){ abrirGaleria(obras, +b.dataset.i, 'Obras'); });
+  });
+
+  // Reserva: datas e mensagem pronta para o WhatsApp
+  var dlg = document.getElementById('book');
+  var inEl = document.getElementById('b-in'), outEl = document.getElementById('b-out'),
+      pesEl = document.getElementById('b-pessoas'), nomeEl = document.getElementById('b-nome'),
+      resumo = document.getElementById('b-resumo'), erro = document.getElementById('b-erro'),
+      fin = document.getElementById('b-final'), tituloEl = document.getElementById('book-titulo');
+  var casa = null;
+  function iso(d){ return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0'); }
+  function parse(v){ var p = v.split('-'); return new Date(+p[0], +p[1]-1, +p[2]); }
+  function br(d){ return String(d.getDate()).padStart(2,'0') + '/' + String(d.getMonth()+1).padStart(2,'0') + '/' + d.getFullYear(); }
+  function noites(a, b){ return Math.round((b - a) / 86400000); }
+  function show(msg){ erro.textContent = msg; erro.hidden = !msg; }
+  function lock(msg){
+    fin.setAttribute('aria-disabled', 'true'); fin.removeAttribute('href');
+    fin.style.opacity = '.5'; fin.style.pointerEvents = 'none';
+    if (msg) resumo.textContent = '—';
+    show(msg || '');
+  }
+  function atualizar(){
+    var a = inEl.value, b = outEl.value;
+    if (!a || !b) { resumo.textContent = 'Escolha a entrada e a saída para ver o resumo.'; return lock(''); }
+    var ci = parse(a), co = parse(b), hoje = parse(iso(new Date()));
+    if (ci < hoje) return lock('A entrada não pode ser antes de hoje.');
+    var n = noites(ci, co);
+    if (n <= 0) return lock('A saída precisa ser depois da entrada.');
+    if (n < casa.minNoites) return lock('Mínimo de ' + casa.minNoites + ' diárias nesta casa.');
+    var pes = parseInt(pesEl.value, 10) || null;
+    if (pes && casa.capacidade && pes > casa.capacidade) return lock('Esta casa acomoda até ' + casa.capacidade + ' pessoas.');
+    for (var i = 0; i < casa.bloqueios.length; i++) {
+      var bi = parse(casa.bloqueios[i][0]), bo = parse(casa.bloqueios[i][1]);
+      if (ci < bo && co > bi) return lock('Já existe reserva nesse período. Escolha outras datas ou chame o Thiago.');
+    }
+    var total = casa.diaria ? n * casa.diaria : null;
+    resumo.innerHTML = '<b>' + esc(casa.nome) + '</b><br>' + br(ci) + ' → ' + br(co) + ' · ' + n + (n === 1 ? ' diária' : ' diárias')
+      + (pes ? ' · ' + pes + (pes === 1 ? ' pessoa' : ' pessoas') : '')
+      + '<br>' + (total !== null ? 'Total estimado: <b>' + brl.format(total) + '</b>' : 'Valor: <b>a combinar com o Thiago</b>');
+    var nome = nomeEl.value.trim();
+    var linhas = ['Olá, Thiago! Quero reservar a *' + casa.nome + '*.', '',
+      '📅 Entrada: ' + br(ci), '📅 Saída: ' + br(co) + ' (' + n + (n === 1 ? ' diária)' : ' diárias)')];
+    if (pes) linhas.push('👥 ' + pes + (pes === 1 ? ' pessoa' : ' pessoas'));
+    if (total !== null) linhas.push('💰 Total estimado: ' + brl.format(total));
+    if (nome) linhas.push('', 'Meu nome: ' + nome);
+    show('');
+    fin.href = wa(linhas.join('\n'));
+    fin.setAttribute('aria-disabled', 'false'); fin.style.opacity = ''; fin.style.pointerEvents = '';
+  }
+  function abrirReserva(c){
+    casa = c;
+    tituloEl.textContent = 'Reservar: ' + c.nome;
+    var hoje = iso(new Date()); inEl.min = hoje; outEl.min = hoje;
+    inEl.value = ''; outEl.value = '';
+    pesEl.max = c.capacidade || 40;
     atualizar(); dlg.showModal();
   }
-  document.querySelectorAll('button.reservar').forEach(function(b){b.addEventListener('click',function(){abrir(b.dataset.casa);});});
-  inEl.addEventListener('change',function(){
-    if(inEl.value){var d=parse(inEl.value);d.setDate(d.getDate()+1);outEl.min=iso(d);if(outEl.value&&outEl.value<=inEl.value)outEl.value='';}
+  inEl.addEventListener('change', function(){
+    if (inEl.value) {
+      var d = parse(inEl.value); d.setDate(d.getDate() + 1); outEl.min = iso(d);
+      if (outEl.value && outEl.value <= inEl.value) outEl.value = '';
+    }
     atualizar();
   });
-  [outEl,pesEl,nomeEl].forEach(function(el){el.addEventListener('input',atualizar);});
-  dlg.querySelector('.xb').addEventListener('click',function(){dlg.close();});
-  dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close();});
-  dlg.querySelector('form').addEventListener('submit',function(e){e.preventDefault();});
-  fin.addEventListener('click',function(e){if(fin.getAttribute('aria-disabled')==='true')e.preventDefault();});
+  [outEl, pesEl, nomeEl].forEach(function(el){ el.addEventListener('input', atualizar); });
+  dlg.querySelector('.xb').addEventListener('click', function(){ dlg.close(); });
+  dlg.addEventListener('click', function(e){ if (e.target === dlg) dlg.close(); });
+  dlg.querySelector('form').addEventListener('submit', function(e){ e.preventDefault(); });
+  fin.addEventListener('click', function(e){ if (fin.getAttribute('aria-disabled') === 'true') e.preventDefault(); });
 })();
 </script>
 </body>

@@ -62,7 +62,8 @@ section h2{font-size:clamp(1.6rem,4vw,2.3rem);line-height:1.15;margin:0 0 10px;l
 .step i{font-style:normal;display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--brand);color:#fff;font-weight:800;margin-bottom:10px}
 
 .house{margin-top:44px}
-.house h3{font-size:1.3rem;margin:0 0 4px}
+.house-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:4px}
+.house h3{font-size:1.3rem;margin:0}
 .house p{margin:0 0 14px;color:var(--muted)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
 .grid button{padding:0;border:0;background:var(--line);border-radius:var(--radius);overflow:hidden;cursor:zoom-in;aspect-ratio:4/3;display:block}
@@ -90,6 +91,23 @@ dialog{border:0;padding:0;background:transparent;max-width:96vw;max-height:94vh;
 dialog::backdrop{background:rgba(10,7,5,.88)}
 dialog img{max-height:90vh;max-width:96vw;border-radius:10px;margin:auto}
 dialog .x{position:absolute;top:-14px;right:-6px;width:42px;height:42px;border-radius:50%;border:0;background:#fff;color:#000;font-size:1.4rem;cursor:pointer}
+dialog.book{border:0;border-radius:18px;padding:0;width:min(520px,calc(100vw - 24px));max-height:calc(100vh - 24px);overflow:auto;background:var(--surface);color:var(--ink)}
+dialog.book::backdrop{background:rgba(10,7,5,.7)}
+.book form{padding:22px 20px 20px;display:grid;gap:14px}
+.book h3{margin:0;font-size:1.25rem;padding-right:34px}
+.book .sub{margin:0;color:var(--muted);font-size:.95rem}
+.book .xb{position:absolute;top:10px;right:10px;width:38px;height:38px;border-radius:50%;border:0;background:var(--line);color:var(--ink);font-size:1.3rem;cursor:pointer}
+.book label{display:grid;gap:6px;font-size:.9rem;font-weight:600}
+.book input{font:inherit;padding:12px;border:1.5px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);min-width:0}
+.book input:focus-visible{outline:3px solid var(--brand);outline-offset:1px}
+.book .two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.book .resumo{background:var(--bg);border:1px dashed var(--line);border-radius:12px;padding:12px 14px;font-size:.95rem;min-height:3.2em}
+.book .resumo b{font-size:1.1rem}
+.book .erro{color:#b3261e;font-weight:600;margin:0;font-size:.92rem}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .book .erro{color:#ff8a80}}
+.book .btn{justify-content:center;width:100%}
+.book .btn[disabled]{opacity:.5;cursor:not-allowed}
+.book .nota{margin:0;color:var(--muted);font-size:.82rem;text-align:center}
 .wa-float{position:fixed;right:16px;bottom:16px;z-index:30;box-shadow:0 8px 24px rgba(0,0,0,.28)}
 </style>
 </head>
@@ -104,7 +122,7 @@ dialog .x{position:absolute;top:-14px;right:-6px;width:42px;height:42px;border-r
       <a href="#obras">Construtora</a>
       <a href="#contato">Contato</a>
     </nav>
-    <a class="btn small" href="https://wa.me/5586988148955?text=Ol%C3%A1!%20Quero%20saber%20sobre%20as%20casas%20de%20temporada." rel="noopener">WhatsApp</a>
+    <a class="btn small" href="https://wa.me/5586998662992?text=Ol%C3%A1!%20Quero%20saber%20sobre%20as%20casas%20de%20temporada." rel="noopener">WhatsApp</a>
   </div>
 </header>
 
@@ -115,7 +133,7 @@ dialog .x{position:absolute;top:-14px;right:-6px;width:42px;height:42px;border-r
       <h1>Casas de temporada no litoral do Piauí</h1>
       <p>Luís Correia e região. Veja fotos, confira datas e reserve conversando direto no WhatsApp, com pagamento por Pix.</p>
       <div class="row">
-        <a class="btn" href="https://wa.me/5586988148955?text=Ol%C3%A1!%20Quero%20saber%20sobre%20as%20casas%20de%20temporada." rel="noopener">Reservar pelo WhatsApp</a>
+        <a class="btn" href="https://wa.me/5586998662992?text=Ol%C3%A1!%20Quero%20saber%20sobre%20as%20casas%20de%20temporada." rel="noopener">Reservar pelo WhatsApp</a>
         <a class="btn ghost" href="#casas">Ver as casas</a>
       </div>
     </div>
@@ -139,8 +157,8 @@ dialog .x{position:absolute;top:-14px;right:-6px;width:42px;height:42px;border-r
       <h2>Nossas casas</h2>
       <p class="lead">Toque em uma foto para ampliar. Para valores, datas livres e vídeos, chame no WhatsApp.</p>
 
-      <div class="house">
-        <h3>Casa com pergolado e piscina</h3>
+      <div class="house" id="casa-pergolado" data-casa="pergolado">
+        <div class="house-head"><h3>Casa com pergolado e piscina</h3><button type="button" class="btn small reservar" data-casa="pergolado">Reservar esta casa</button></div>
         <p>Jardim, área coberta e piscina, perto da praia.</p>
         <div class="grid">
           <button type="button"><img loading="lazy" src="img/casa-pergolado-1.jpg" alt="Área coberta com vista para o jardim e a piscina"></button>
@@ -148,8 +166,8 @@ dialog .x{position:absolute;top:-14px;right:-6px;width:42px;height:42px;border-r
         </div>
       </div>
 
-      <div class="house">
-        <h3>Casa com piscina e área gourmet</h3>
+      <div class="house" id="casa-piscina" data-casa="piscina">
+        <div class="house-head"><h3>Casa com piscina e área gourmet</h3><button type="button" class="btn small reservar" data-casa="piscina">Reservar esta casa</button></div>
         <p>Varanda ampla, churrasqueira e piscina para a família toda.</p>
         <div class="grid">
           <button type="button"><img loading="lazy" src="img/casa-piscina-1.jpg" alt="Piscina e deck ao entardecer"></button>
@@ -159,8 +177,8 @@ dialog .x{position:absolute;top:-14px;right:-6px;width:42px;height:42px;border-r
         </div>
       </div>
 
-      <div class="house">
-        <h3>Casa amarela</h3>
+      <div class="house" id="casa-amarela" data-casa="amarela">
+        <div class="house-head"><h3>Casa amarela</h3><button type="button" class="btn small reservar" data-casa="amarela">Reservar esta casa</button></div>
         <p>Sobrado espaçoso com quintal amplo e área aberta.</p>
         <div class="grid">
           <button type="button"><img loading="lazy" src="img/casa-amarela-1.jpg" alt="Fachada da casa amarela com quintal de pedra"></button>
@@ -168,8 +186,8 @@ dialog .x{position:absolute;top:-14px;right:-6px;width:42px;height:42px;border-r
         </div>
       </div>
 
-      <div class="house">
-        <h3>Casa moderna</h3>
+      <div class="house" id="casa-moderna" data-casa="moderna">
+        <div class="house-head"><h3>Casa moderna</h3><button type="button" class="btn small reservar" data-casa="moderna">Reservar esta casa</button></div>
         <p>Arquitetura contemporânea, piso de porcelanato e jardim.</p>
         <div class="grid">
           <button type="button"><img loading="lazy" src="img/casa-moderna-1.jpg" alt="Jardim com palmeira e caminho de pedras até a entrada"></button>
@@ -179,8 +197,8 @@ dialog .x{position:absolute;top:-14px;right:-6px;width:42px;height:42px;border-r
         </div>
       </div>
 
-      <div class="house">
-        <h3>Casa com garagem</h3>
+      <div class="house" id="casa-garagem" data-casa="garagem">
+        <div class="house-head"><h3>Casa com garagem</h3><button type="button" class="btn small reservar" data-casa="garagem">Reservar esta casa</button></div>
         <p>Fachada moderna com garagem coberta.</p>
         <div class="grid">
           <button type="button"><img loading="lazy" src="img/casa-fachada-1.jpg" alt="Fachada da casa com pedra e iluminação à noite"></button>
@@ -200,7 +218,7 @@ dialog .x{position:absolute;top:-14px;right:-6px;width:42px;height:42px;border-r
           <li>Galpões e obras comerciais</li>
           <li>Acompanhamento da obra do início ao fim</li>
         </ul>
-        <p style="margin-top:22px"><a class="btn ghost" style="color:var(--ink)" href="https://wa.me/5586988148955?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento%20de%20obra." rel="noopener">Pedir orçamento</a></p>
+        <p style="margin-top:22px"><a class="btn ghost" style="color:var(--ink)" href="https://wa.me/5586998662992?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento%20de%20obra." rel="noopener">Pedir orçamento</a></p>
       </div>
       <img loading="lazy" src="img/placa.jpg" alt="Fachada com a placa Thiago Veras Construtora e Imobiliária">
     </div>
@@ -220,7 +238,7 @@ dialog .x{position:absolute;top:-14px;right:-6px;width:42px;height:42px;border-r
       <h2>Fale com a gente</h2>
       <p class="lead">Atendimento pelo WhatsApp, com resposta imediata. Para falar com uma pessoa, é só pedir.</p>
       <div class="row">
-        <a class="btn" href="https://wa.me/5586988148955?text=Ol%C3%A1!%20Quero%20saber%20sobre%20as%20casas%20de%20temporada." rel="noopener">Chamar no WhatsApp</a>
+        <a class="btn" href="https://wa.me/5586998662992?text=Ol%C3%A1!%20Quero%20saber%20sobre%20as%20casas%20de%20temporada." rel="noopener">Chamar no WhatsApp</a>
         <a class="btn ghost" href="https://www.instagram.com/thiago_veras_empreendimentos/" rel="noopener">Instagram</a>
       </div>
     </div>
@@ -231,12 +249,32 @@ dialog .x{position:absolute;top:-14px;right:-6px;width:42px;height:42px;border-r
   <div class="wrap">
     <div><b>THIAGO V MUNIZ LTDA</b> · CNPJ 44.226.649/0001-09</div>
     <div>Avenida Prefeito Antonio de Padua da Costa Lima, 838, Centro · Luís Correia, PI · CEP 64220-000</div>
-    <div>WhatsApp (86) 98814-8955 · <a href="https://163-176-74-32.sslip.io/privacidade">Política de privacidade</a></div>
+    <div>WhatsApp (86) 99866-2992 · <a href="https://163-176-74-32.sslip.io/privacidade">Política de privacidade</a></div>
   </div>
 </footer>
 
+<dialog id="book" class="book" aria-labelledby="book-titulo">
+  <button type="button" class="xb" aria-label="Fechar">×</button>
+  <form method="dialog" id="book-form" novalidate>
+    <div><h3 id="book-titulo">Reservar</h3><p class="sub">Escolha as datas e finalize direto no WhatsApp do Thiago.</p></div>
+    <div class="two-col">
+      <label>Entrada<input type="date" id="b-in" required></label>
+      <label>Saída<input type="date" id="b-out" required></label>
+    </div>
+    <div class="two-col">
+      <label>Pessoas<input type="number" id="b-pessoas" min="1" max="40" inputmode="numeric" placeholder="Ex.: 6"></label>
+      <label>Seu nome<input type="text" id="b-nome" autocomplete="name" maxlength="60" placeholder="Ex.: Ana"></label>
+    </div>
+    <div class="resumo" id="b-resumo" aria-live="polite">Escolha a entrada e a saída para ver o resumo.</div>
+    <p class="erro" id="b-erro" role="alert" hidden></p>
+    <a class="btn" id="b-final" href="#" rel="noopener" aria-disabled="true">Finalizar no WhatsApp</a>
+    <p class="nota">A reserva só vale depois que o Thiago confirmar a disponibilidade e combinar o pagamento.</p>
+  </form>
+</dialog>
+
 <dialog id="zoom"><button class="x" aria-label="Fechar" type="button">×</button><img alt=""></dialog>
 
+<script src="casas.js"></script>
 <script>
 (function(){
   var d=document.getElementById('zoom'), im=d.querySelector('img');
@@ -244,6 +282,71 @@ dialog .x{position:absolute;top:-14px;right:-6px;width:42px;height:42px;border-r
     b.addEventListener('click',function(){var s=b.querySelector('img');im.src=s.src;im.alt=s.alt;d.showModal();});
   });
   d.addEventListener('click',function(e){if(e.target===d||e.target.classList.contains('x'))d.close();});
+})();
+</script>
+<script>
+(function(){
+  var dlg=document.getElementById('book'); if(!dlg||!window.CASAS) return;
+  var inEl=document.getElementById('b-in'), outEl=document.getElementById('b-out'),
+      pesEl=document.getElementById('b-pessoas'), nomeEl=document.getElementById('b-nome'),
+      resumo=document.getElementById('b-resumo'), erro=document.getElementById('b-erro'),
+      fin=document.getElementById('b-final'), titulo=document.getElementById('book-titulo');
+  var casa=null;
+  var brl=new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'});
+  function iso(d){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
+  function parse(v){var p=v.split('-');return new Date(+p[0],+p[1]-1,+p[2]);}
+  function br(d){return String(d.getDate()).padStart(2,'0')+'/'+String(d.getMonth()+1).padStart(2,'0')+'/'+d.getFullYear();}
+  function noites(a,b){return Math.round((b-a)/86400000);}
+  function show(msg){erro.textContent=msg;erro.hidden=!msg;}
+  function lock(msg){fin.setAttribute('aria-disabled','true');fin.removeAttribute('href');fin.style.opacity='.5';fin.style.pointerEvents='none';show(msg||'');}
+
+  function atualizar(){
+    var a=inEl.value, b=outEl.value;
+    if(!a||!b){resumo.textContent='Escolha a entrada e a saída para ver o resumo.';return lock('');}
+    var ci=parse(a), co=parse(b), hoje=parse(iso(new Date()));
+    if(ci<hoje) {resumo.textContent='—';return lock('A entrada não pode ser antes de hoje.');}
+    var n=noites(ci,co);
+    if(n<=0){resumo.textContent='—';return lock('A saída precisa ser depois da entrada.');}
+    if(n<casa.minNoites){resumo.textContent='—';return lock('Mínimo de '+casa.minNoites+' diárias nesta casa.');}
+    var pes=parseInt(pesEl.value,10)||null;
+    if(pes&&casa.capacidade&&pes>casa.capacidade){resumo.textContent='—';return lock('Esta casa acomoda até '+casa.capacidade+' pessoas.');}
+    for(var i=0;i<casa.bloqueios.length;i++){
+      var bi=parse(casa.bloqueios[i][0]), bo=parse(casa.bloqueios[i][1]);
+      if(ci<bo && co>bi){resumo.textContent='—';return lock('Já existe reserva nesse período. Escolha outras datas ou chame o Thiago.');}
+    }
+    var total=casa.diaria? n*casa.diaria : null;
+    resumo.innerHTML='<b>'+casa.nome+'</b><br>'+br(ci)+' → '+br(co)+' · '+n+(n===1?' diária':' diárias')
+      +(pes?' · '+pes+(pes===1?' pessoa':' pessoas'):'')
+      +'<br>'+(total!==null?'Total estimado: <b>'+brl.format(total)+'</b>':'Valor: <b>a combinar com o Thiago</b>');
+    var nome=nomeEl.value.trim();
+    var linhas=['Olá, Thiago! Quero reservar a *'+casa.nome+'*.','',
+      '📅 Entrada: '+br(ci),'📅 Saída: '+br(co)+' ('+n+(n===1?' diária)':' diárias)')];
+    if(pes) linhas.push('👥 '+pes+(pes===1?' pessoa':' pessoas'));
+    if(total!==null) linhas.push('💰 Total estimado: '+brl.format(total));
+    if(nome) linhas.push('','Meu nome: '+nome);
+    show('');
+    fin.href='https://wa.me/'+window.THIAGO.whatsapp+'?text='+encodeURIComponent(linhas.join('\n'));
+    fin.setAttribute('aria-disabled','false');fin.style.opacity='';fin.style.pointerEvents='';
+  }
+
+  function abrir(id){
+    casa=window.CASAS.filter(function(c){return c.id===id;})[0]; if(!casa) return;
+    titulo.textContent='Reservar: '+casa.nome;
+    var hoje=iso(new Date()); inEl.min=hoje; outEl.min=hoje;
+    inEl.value='';outEl.value='';
+    if(casa.capacidade) pesEl.max=casa.capacidade;
+    atualizar(); dlg.showModal();
+  }
+  document.querySelectorAll('button.reservar').forEach(function(b){b.addEventListener('click',function(){abrir(b.dataset.casa);});});
+  inEl.addEventListener('change',function(){
+    if(inEl.value){var d=parse(inEl.value);d.setDate(d.getDate()+1);outEl.min=iso(d);if(outEl.value&&outEl.value<=inEl.value)outEl.value='';}
+    atualizar();
+  });
+  [outEl,pesEl,nomeEl].forEach(function(el){el.addEventListener('input',atualizar);});
+  dlg.querySelector('.xb').addEventListener('click',function(){dlg.close();});
+  dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close();});
+  dlg.querySelector('form').addEventListener('submit',function(e){e.preventDefault();});
+  fin.addEventListener('click',function(e){if(fin.getAttribute('aria-disabled')==='true')e.preventDefault();});
 })();
 </script>
 </body>

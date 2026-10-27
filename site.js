@@ -9,6 +9,13 @@
   function rolou(){ topo.classList.toggle('scrolled', window.scrollY > 10); }
   window.addEventListener('scroll', rolou, {passive:true}); rolou();
 
+  // No início, no celular, o botão flutuante cobriria os cartões: aparece ao rolar
+  var flut = document.querySelector('.wa-float');
+  if (flut && document.querySelector('.hub')) {
+    var ajusta = function(){ flut.classList.toggle('oculto', window.innerWidth <= 560 && window.scrollY < 160); };
+    window.addEventListener('scroll', ajusta, {passive:true}); window.addEventListener('resize', ajusta); ajusta();
+  }
+
   // Menu do celular
   var drawer = document.getElementById('menu-cel'), burger = document.querySelector('.burger');
   function menu(abrir){

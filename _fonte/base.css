@@ -259,3 +259,29 @@ nav.menu a[aria-current="page"]::after{transform:scaleX(1)}
 @media(max-width:860px){.split{grid-template-columns:1fr}}
 .split img{border-radius:var(--radius);width:100%;aspect-ratio:4/3;object-fit:cover}
 .build .gallery{margin-top:0}
+
+/* início: nome em destaque e as quatro áreas logo na abertura */
+.hub{position:relative;min-height:calc(100vh - 122px);display:flex;align-items:center;color:#fff;background:var(--deep);overflow:hidden}
+.hub>.fundo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hub::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,12,10,.62) 0%,rgba(15,12,10,.5) 45%,rgba(15,12,10,.88) 100%)}
+.hub .wrap{position:relative;z-index:1;width:100%;padding-top:clamp(28px,5vw,56px);padding-bottom:clamp(36px,6vw,64px)}
+.marca{text-align:center}
+.marca-icone{width:clamp(86px,11vw,130px);height:auto;margin:0 auto 14px;filter:drop-shadow(0 6px 18px rgba(0,0,0,.35))}
+.marca h1{margin:0;font:800 clamp(2.5rem,8vw,5.2rem)/.95 var(--font-head);letter-spacing:.01em;text-transform:uppercase;text-shadow:0 4px 30px rgba(0,0,0,.35)}
+.marca h1 .leve{font-weight:500}
+.marca h1 .emp{display:block;margin-top:12px;padding-left:.42em;font:700 clamp(.82rem,2.3vw,1.35rem)/1 var(--font-head);letter-spacing:.42em;color:var(--brand)}
+.marca .slogan-g{margin:18px auto 0;color:#f3ece4;font-size:clamp(.95rem,2vw,1.1rem)}
+.escolha{margin:clamp(26px,4vw,40px) 0 16px;text-align:center;font:700 .82rem var(--font-head);letter-spacing:.2em;text-transform:uppercase;color:#fff;opacity:.9}
+.hub .area{min-height:clamp(220px,28vh,290px);text-align:left;border:1px solid rgba(255,255,255,.14)}
+.hub .area h3{font-size:1.45rem}
+@media(max-width:560px){
+  .hub .areas{grid-template-columns:1fr 1fr;gap:10px}
+  .hub .area{min-height:168px;border-radius:16px}
+  .hub .area .txt{padding:14px}
+  .hub .area p{display:none}
+  .hub .area h3{font-size:1.08rem;margin:4px 0 8px}
+  .hub .area .ir{font-size:.68rem;gap:6px}
+  .hub .area .ir span{width:24px;height:24px}
+}
+.wa-float{transition:transform .2s,opacity .2s}
+.wa-float.oculto{opacity:0;pointer-events:none;transform:scale(.8)}

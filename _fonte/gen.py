@@ -209,8 +209,8 @@ TRUST = f'''  <section class="trust" aria-label="Por que escolher a Thiago Veras
 
 # ---------------- Início ----------------
 def area(n, arq, img, titulo, texto, botao):
-    return f'''        <a class="area" href="{arq}">
-          <img loading="lazy" src="{img}" alt="">
+    return f'''        <a class="area" href="{arq}" target="_blank" rel="noopener">
+          <img src="{img}" alt="">
           <div class="txt"><span class="num">{n}</span><h3>{titulo}</h3><p>{texto}</p><span class="ir">{botao} <span>›</span></span></div>
         </a>'''
 
@@ -218,35 +218,26 @@ inicio = head('Thiago Veras Empreendimentos — Casas de temporada, construção
               'Aluguel de casas de temporada, construção, projetos e administração de obras em Luís Correia e no litoral do Piauí.',
               'img/capa.jpg', JSONLD) + topo('index.html', 'Olá, Thiago! Vim pelo site e quero mais informações.') + f'''
 <main id="topo">
-  <section class="hero" style="padding:0">
-    <img src="img/capa.jpg" alt="Praia de Luís Correia vista do alto, com coqueiros e casas à beira-mar" fetchpriority="high">
+  <section class="hub" style="padding:0">
+    <img class="fundo" src="img/capa.jpg" alt="" fetchpriority="high">
     <div class="wrap">
-      <div class="tag">📍 Luís Correia · Litoral do Piauí</div>
-      <h1>Confiança, qualidade e resultados</h1>
-      <p>Casas de temporada perto das praias de Luís Correia, construção, projetos e administração de obras no litoral do Piauí.</p>
-      <div class="row">
-        <a class="btn" href="#areas">Conheça o que fazemos</a>
-        <a class="btn ghost wa-link" href="#" rel="noopener">{WA_SVG} Falar no WhatsApp</a>
+      <div class="marca">
+        <img class="marca-icone" src="img/logo-icone.png" alt="" width="130" height="74">
+        <h1>Thiago <span class="leve">Veras</span><span class="emp">Empreendimentos</span></h1>
+        <p class="slogan-g">Confiança, qualidade e resultados · Luís Correia, Piauí</p>
+      </div>
+      <p class="escolha">O que você procura?</p>
+      <div class="areas">
+{area('01', 'casas.html', 'img/casa-piscina-1.jpg', 'Casas', 'Casas de temporada com piscina, perto da praia. Reserve direto com o proprietário.', 'Ver casas')}
+{area('02', 'construcoes.html', 'img/obra-sobrado.jpg', 'Construções', 'Casas, sobrados, galpões e pontos comerciais, do início à entrega das chaves.', 'Ver obras')}
+{area('03', 'projetos.html', 'img/casa-moderna-2.jpg', 'Projetos', 'Planejamento da sua obra: o que construir, em quais etapas e quanto vai custar.', 'Saiba mais')}
+{area('04', 'administracao.html', 'img/obra-casa.jpg', 'Administração', 'Acompanhamos sua obra de perto: equipe, materiais, prazos e prestação de contas.', 'Saiba mais')}
       </div>
     </div>
     <span class="credit" id="credito-capa"></span>
   </section>
 
 {TRUST}
-  <section id="areas">
-    <div class="wrap">
-      <p class="eyebrow">Thiago Veras Empreendimentos</p>
-      <h2>Como podemos ajudar?</h2>
-      <p class="lead">Escolha a área que você procura.</p>
-      <div class="areas">
-{area('01', 'casas.html', 'img/casa-piscina-1.jpg', 'Casas', 'Casas de temporada com piscina, perto da praia. Escolha as datas e reserve direto com o proprietário.', 'Ver casas')}
-{area('02', 'construcoes.html', 'img/obra-sobrado.jpg', 'Construções', 'Casas, sobrados, galpões e pontos comerciais, do início à entrega das chaves.', 'Ver obras')}
-{area('03', 'projetos.html', 'img/casa-moderna-2.jpg', 'Projetos', 'Planejamento da sua obra: o que construir, em quais etapas e quanto vai custar.', 'Saiba mais')}
-{area('04', 'administracao.html', 'img/obra-casa.jpg', 'Administração', 'Acompanhamos sua obra de perto: equipe, materiais, prazos e prestação de contas.', 'Saiba mais')}
-      </div>
-    </div>
-  </section>
-
   <section id="regiao" class="region">
     <div class="wrap grid">
       <div>

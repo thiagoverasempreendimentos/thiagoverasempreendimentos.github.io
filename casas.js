@@ -42,13 +42,6 @@ window.CASAS = [
     diaria: null, capacidade: null, quartos: null, minNoites: 1, bloqueios: [],
   },
   {
-    id: 'moderna', nome: 'Casa moderna', cidade: null,
-    resumo: 'Arquitetura contemporânea, porcelanato, cozinha com balcão e jardim.',
-    destaques: ['Jardim', 'Cozinha integrada', 'Porcelanato'],
-    fotos: ['img/casa-moderna-1.jpg', 'img/casa-moderna-2.jpg', 'img/casa-moderna-3.jpg', 'img/casa-moderna-4.jpg'],
-    diaria: null, capacidade: null, quartos: null, minNoites: 1, bloqueios: [],
-  },
-  {
     id: 'garagem', nome: 'Casa com garagem', cidade: null,
     resumo: 'Fachada moderna com garagem coberta.',
     destaques: ['Garagem coberta'],

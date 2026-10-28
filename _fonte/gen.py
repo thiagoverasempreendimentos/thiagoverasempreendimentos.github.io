@@ -61,8 +61,23 @@ def head(titulo, descricao, capa, extra=''):
 <link rel="stylesheet" href="style.css">
 {extra}</head>'''
 
+BOTAO = {  # texto e destino do botão do topo, por página
+    'index.html': ('Falar no WhatsApp', None, 'Olá, Thiago! Vim pelo site e quero mais informações.'),
+    'casas.html': ('Reservar', '#casas', None),
+    'construcoes.html': ('Pedir orçamento', None, 'Olá, Thiago! Quero um orçamento de obra.'),
+    'projetos.html': ('Falar sobre meu projeto', None, 'Olá, Thiago! Quero conversar sobre um projeto.'),
+    'administracao.html': ('Pedir orçamento', None, 'Olá, Thiago! Quero falar sobre administração de obra.'),
+}
+
+def botao_topo(atual):
+    texto, destino, msg = BOTAO[atual]
+    if destino:
+        return f'<a class="btn small" href="{destino}">{texto}</a>'
+    return f'<a class="btn small wa-link" data-msg="{msg}" href="#" rel="noopener">{texto}</a>'
+
 def topo(atual, msg):
-    return f'''<body data-msg="{msg}">
+    tema = atual.replace('.html', '').replace('index', 'inicio')
+    return f'''<body class="tema-{tema}" data-msg="{msg}">
 
 <div class="topbar">
   <div class="wrap">
@@ -81,7 +96,7 @@ def topo(atual, msg):
       {nav(atual)}
     </nav>
     <div class="head-cta">
-      <a class="btn small" href="casas.html">Reservar casa</a>
+      {botao_topo(atual)}
       <button type="button" class="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-cel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     </div>
   </div>
@@ -103,11 +118,11 @@ def topo(atual, msg):
 </div>
 '''
 
-def page_hero(titulo, texto, img, alt):
+def page_hero(titulo, texto, img, alt, crumb=None):
     return f'''  <section class="page-hero" style="padding:0">
     <img src="{img}" alt="{alt}" fetchpriority="high">
     <div class="wrap">
-      <p class="crumb"><a href="index.html">Início</a> › {titulo}</p>
+      <p class="crumb"><a href="index.html">Início</a> › {crumb or titulo}</p>
       <h1>{titulo}</h1>
       <p>{texto}</p>
     </div>
@@ -209,7 +224,8 @@ TRUST = f'''  <section class="trust" aria-label="Por que escolher a Thiago Veras
 
 # ---------------- Início ----------------
 def area(n, arq, img, titulo, texto, botao):
-    return f'''        <a class="area" href="{arq}" target="_blank" rel="noopener">
+    tema = arq.replace('.html', '')
+    return f'''        <a class="area t-{tema}" href="{arq}" target="_blank" rel="noopener">
           <img src="{img}" alt="">
           <div class="txt"><span class="num">{n}</span><h3>{titulo}</h3><p>{texto}</p><span class="ir">{botao} <span>›</span></span></div>
         </a>'''
@@ -224,7 +240,7 @@ inicio = head('Thiago Veras Empreendimentos — Casas de temporada, construção
       <div class="marca">
         <img class="marca-icone" src="img/logo-icone.png" alt="" width="130" height="74">
         <h1>Thiago <span class="leve">Veras</span><span class="emp">Empreendimentos</span></h1>
-        <p class="slogan-g">Confiança, qualidade e resultados · Luís Correia, Piauí</p>
+        <p class="slogan-g">Casas de temporada, construção e projetos no litoral do Piauí</p>
       </div>
       <p class="escolha">O que você procura?</p>
       <div class="areas">
@@ -251,9 +267,9 @@ inicio = head('Thiago Veras Empreendimentos — Casas de temporada, construção
         </ul>
         <p style="margin-top:26px"><a class="btn" href="casas.html">Ver casas para alugar</a></p>
       </div>
-      <div class="pics">
-        <img loading="lazy" src="img/casa-amarela-1.jpg" alt="Casa com quintal amplo e coqueiros sob céu azul">
-        <img loading="lazy" src="img/casa-piscina-1.jpg" alt="Piscina ao entardecer em casa de temporada">
+      <div class="pics" id="pics-regiao">
+        <div class="foto"><img loading="lazy" src="img/lugar-mar.jpg" alt="Praia de mar calmo e águas esverdeadas"></div>
+        <div class="foto"><img loading="lazy" src="img/lugar-barracas.jpg" alt="Barracas de palha na faixa de areia"></div>
       </div>
     </div>
   </section>
@@ -266,7 +282,7 @@ casas = head('Casas de temporada em Luís Correia, PI — Thiago Veras Empreendi
              'Casas de temporada com piscina em Luís Correia. Escolha a casa e as datas e reserve direto com o proprietário pelo WhatsApp.',
              'img/casa-piscina-1.jpg') + topo('casas.html', 'Olá, Thiago! Quero saber sobre as casas de temporada.') + f'''
 <main id="topo">
-{page_hero('Casas de temporada', 'Escolha a casa e as datas e reserve direto com o proprietário, com pagamento por Pix.', 'img/capa.jpg', 'Praia de Luís Correia vista do alto')}
+{page_hero('Casas de temporada em Luís Correia', 'Piscina, espaço para a família e reserva direto com o proprietário, com pagamento por Pix.', 'img/capa.jpg', 'Praia de Luís Correia vista do alto', 'Casas')}
   <section class="trust" aria-label="Por que reservar com a gente">
     <ul>
       <li>{I_CASA}<div>Direto com o proprietário<span>Sem intermediários</span></div></li>
@@ -282,6 +298,15 @@ casas = head('Casas de temporada em Luís Correia, PI — Thiago Veras Empreendi
       <h2>Escolha a sua casa</h2>
       <p class="lead">Toque na foto para ver mais imagens. Em “Reservar”, escolha as datas e finalize direto no WhatsApp do Thiago.</p>
       <div class="cards" id="lista-casas"></div>
+    </div>
+  </section>
+
+  <section id="lugares" style="padding-top:0">
+    <div class="wrap">
+      <p class="eyebrow">O destino</p>
+      <h2>Perto das casas</h2>
+      <p class="lead">Praias de mar calmo, dunas e passeios para o Delta do Parnaíba. Pergunte ao Thiago a distância de cada casa até a praia.</p>
+      <div class="lugares" id="lista-lugares"></div>
     </div>
   </section>
 
@@ -361,7 +386,7 @@ construcoes = head('Construções em Luís Correia, PI — Thiago Veras Construt
                    'Construção de casas, sobrados, galpões e pontos comerciais em Luís Correia e região, do início à entrega das chaves.',
                    'img/obra-sobrado.jpg') + topo('construcoes.html', 'Olá, Thiago! Quero um orçamento de obra.') + f'''
 <main id="topo">
-{page_hero('Construções', 'Casas, sobrados, galpões e pontos comerciais em Luís Correia e região, do início à entrega das chaves.', 'img/casa-moderna-4.jpg', 'Fachada de casa construída pela Thiago Veras, iluminada à noite')}
+{page_hero('Construção de casas, sobrados e galpões em Luís Correia', 'Do projeto à entrega das chaves, com acompanhamento em cada etapa.', 'img/casa-moderna-4.jpg', 'Fachada de casa construída pela Thiago Veras, iluminada à noite', 'Construções')}
   <section>
     <div class="wrap split">
       <div>
@@ -401,7 +426,7 @@ projetos = head('Projetos — Thiago Veras Empreendimentos, Luís Correia, PI',
                 'Planejamento e projeto da sua obra em Luís Correia e região: o que construir, em quais etapas e quanto vai custar.',
                 'img/casa-moderna-2.jpg') + topo('projetos.html', 'Olá, Thiago! Quero conversar sobre um projeto.') + f'''
 <main id="topo">
-{page_hero('Projetos', 'Antes de construir, planejar. Ajudamos você a definir o que fazer, em quais etapas e quanto vai custar.', 'img/casa-moderna-2.jpg', 'Sala ampla com forro rebaixado e iluminação embutida')}
+{page_hero('Projeto e planejamento da sua obra', 'Antes de construir, planejar: o que fazer, em quais etapas e quanto vai custar.', 'img/casa-moderna-2.jpg', 'Sala ampla com forro rebaixado e iluminação embutida', 'Projetos')}
   <section>
     <div class="wrap">
       <p class="eyebrow">Do papel à obra</p>
@@ -434,7 +459,7 @@ administracao = head('Administração de obras — Thiago Veras Empreendimentos,
                      'Administração de obras em Luís Correia e região: equipe, compra de materiais, prazos e prestação de contas.',
                      'img/obra-casa.jpg') + topo('administracao.html', 'Olá, Thiago! Quero falar sobre administração de obra.') + f'''
 <main id="topo">
-{page_hero('Administração de obras', 'Cuidamos da sua obra de perto, para você acompanhar sem precisar estar lá todo dia.', 'img/obra-casa.jpg', 'Casa em construção com entrada e calçada de pedra')}
+{page_hero('Administração de obras, de perto e com prestação de contas', 'Cuidamos da sua obra para você acompanhar sem precisar estar lá todo dia.', 'img/obra-casa.jpg', 'Casa em construção com entrada e calçada de pedra', 'Administração')}
   <section>
     <div class="wrap">
       <p class="eyebrow">Sua obra sob controle</p>

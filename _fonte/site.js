@@ -66,3 +66,26 @@
     botoes.forEach(function(b, i){ b.addEventListener('click', function(){ window.abrirGaleria(lista, i, box.dataset.galeria); }); });
   });
 })();
+
+// Lugares de Luís Correia (dados em casas.js): seção "Perto das casas" e fotos da região
+(function(){
+  var L = window.LUGARES || [];
+  function esc(s){ return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+  function foto(l, i){
+    return '<span class="foto"><img loading="lazy" src="' + esc(l.foto) + '" alt="' + esc(l.nome) + '">' + (l.ilustrativa ? '<span class="ilustrativa">Foto ilustrativa</span>' : '') + '</span>';
+  }
+  var lista = document.getElementById('lista-lugares');
+  if (lista) {
+    lista.innerHTML = L.map(function(l, i){
+      return '<figure class="lugar">' + foto(l, i) + '<figcaption><b>' + esc(l.nome) + '</b><span>' + esc(l.legenda) + '</span>' + (l.distancia ? '<em>' + esc(l.distancia) + '</em>' : '') + '</figcaption></figure>';
+    }).join('');
+    var imgs = lista.querySelectorAll('img');
+    imgs.forEach(function(im, i){ im.style.cursor = 'zoom-in'; im.addEventListener('click', function(){ window.abrirGaleria(L.map(function(l){ return {src: l.foto, alt: l.nome}; }), i, 'Luís Correia'); }); });
+  }
+  var pics = document.getElementById('pics-regiao');
+  if (pics && L.length >= 2) {
+    pics.innerHTML = [L[0], L[1]].map(function(l){
+      return '<div class="foto"><img loading="lazy" src="' + esc(l.foto) + '" alt="' + esc(l.nome) + '">' + (l.ilustrativa ? '<span class="ilustrativa">Foto ilustrativa</span>' : '') + '</div>';
+    }).join('');
+  }
+})();

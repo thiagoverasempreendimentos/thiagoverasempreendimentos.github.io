@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-</head><body data-msg="Olá, Thiago! Quero saber sobre as casas de temporada.">
+</head><body class="tema-casas" data-msg="Olá, Thiago! Quero saber sobre as casas de temporada.">
 
 <div class="topbar">
   <div class="wrap">
@@ -41,7 +41,7 @@
       <a href="#contato">Contato</a>
     </nav>
     <div class="head-cta">
-      <a class="btn small" href="casas.html">Reservar casa</a>
+      <a class="btn small" href="#casas">Reservar</a>
       <button type="button" class="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-cel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     </div>
   </div>
@@ -71,9 +71,9 @@
   <section class="page-hero" style="padding:0">
     <img src="img/capa.jpg" alt="Praia de Luís Correia vista do alto" fetchpriority="high">
     <div class="wrap">
-      <p class="crumb"><a href="index.html">Início</a> › Casas de temporada</p>
-      <h1>Casas de temporada</h1>
-      <p>Escolha a casa e as datas e reserve direto com o proprietário, com pagamento por Pix.</p>
+      <p class="crumb"><a href="index.html">Início</a> › Casas</p>
+      <h1>Casas de temporada em Luís Correia</h1>
+      <p>Piscina, espaço para a família e reserva direto com o proprietário, com pagamento por Pix.</p>
     </div>
   </section>
 
@@ -92,6 +92,15 @@
       <h2>Escolha a sua casa</h2>
       <p class="lead">Toque na foto para ver mais imagens. Em “Reservar”, escolha as datas e finalize direto no WhatsApp do Thiago.</p>
       <div class="cards" id="lista-casas"></div>
+    </div>
+  </section>
+
+  <section id="lugares" style="padding-top:0">
+    <div class="wrap">
+      <p class="eyebrow">O destino</p>
+      <h2>Perto das casas</h2>
+      <p class="lead">Praias de mar calmo, dunas e passeios para o Delta do Parnaíba. Pergunte ao Thiago a distância de cada casa até a praia.</p>
+      <div class="lugares" id="lista-lugares"></div>
     </div>
   </section>
 

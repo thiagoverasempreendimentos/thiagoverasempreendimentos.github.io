@@ -53,6 +53,7 @@ def head(titulo, descricao, capa, extra=''):
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta name="theme-color" content="#2b2b2b">
+<meta name="color-scheme" content="only light">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">

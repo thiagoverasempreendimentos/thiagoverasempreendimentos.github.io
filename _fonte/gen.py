@@ -67,7 +67,7 @@ BOTAO = {  # texto e destino do botão do topo, por página
     'casas.html': ('Reservar', '#casas', None),
     'construcoes.html': ('Pedir orçamento', None, 'Olá, Thiago! Quero um orçamento de obra.'),
     'projetos.html': ('Falar sobre meu projeto', None, 'Olá, Thiago! Quero conversar sobre um projeto.'),
-    'administracao.html': ('Pedir orçamento', None, 'Olá, Thiago! Quero falar sobre administração de obra.'),
+    'administracao.html': ('Falar com o Thiago', None, 'Olá, Thiago! Tenho uma casa e quero falar sobre administração para locação.'),
 }
 
 def botao_topo(atual):
@@ -232,7 +232,7 @@ def area(n, arq, img, titulo, texto, botao):
         </a>'''
 
 inicio = head('Thiago Veras Empreendimentos — Casas de temporada, construção e projetos em Luís Correia, PI',
-              'Aluguel de casas de temporada, construção, projetos e administração de obras em Luís Correia e no litoral do Piauí.',
+              'Aluguel de casas de temporada, construção, projetos e administração de imóveis para temporada em Luís Correia e no litoral do Piauí.',
               'img/capa.jpg', JSONLD) + topo('index.html', 'Olá, Thiago! Vim pelo site e quero mais informações.') + f'''
 <main id="topo">
   <section class="hub" style="padding:0">
@@ -248,7 +248,7 @@ inicio = head('Thiago Veras Empreendimentos — Casas de temporada, construção
 {area('01', 'casas.html', 'img/casa-piscina-1.jpg', 'Casas', 'Casas de temporada com piscina, perto da praia. Reserve direto com o proprietário.', 'Ver casas')}
 {area('02', 'construcoes.html', 'img/casa-fachada-2.jpg', 'Construções', 'Casas, sobrados, galpões e pontos comerciais, do início à entrega das chaves.', 'Ver obras')}
 {area('03', 'projetos.html', 'img/casa-moderna-1.jpg', 'Projetos', 'Planejamento da sua obra: o que construir, em quais etapas e quanto vai custar.', 'Saiba mais')}
-{area('04', 'administracao.html', 'img/casa-amarela-1.jpg', 'Administração', 'Acompanhamos sua obra de perto: equipe, materiais, prazos e prestação de contas.', 'Saiba mais')}
+{area('04', 'administracao.html', 'img/casa-amarela-1.jpg', 'Administração', 'Você entrega a casa e cuidamos da locação: reservas, hóspedes, conservação e prestação de contas.', 'Saiba mais')}
       </div>
     </div>
     <span class="credit" id="credito-capa"></span>
@@ -456,32 +456,32 @@ projetos = head('Projetos — Thiago Veras Empreendimentos, Luís Correia, PI',
 write('projetos.html', projetos)
 
 # ---------------- Administração ----------------
-administracao = head('Administração de obras — Thiago Veras Empreendimentos, Luís Correia, PI',
-                     'Administração de obras em Luís Correia e região: equipe, compra de materiais, prazos e prestação de contas.',
-                     'img/casa-amarela-1.jpg') + topo('administracao.html', 'Olá, Thiago! Quero falar sobre administração de obra.') + f'''
+administracao = head('Administração de imóveis para temporada — Thiago Veras Empreendimentos, Luís Correia, PI',
+                     'Entregue sua casa para o Thiago administrar e cuidar da locação por temporada em Luís Correia, PI: reservas, hóspedes, limpeza e prestação de contas.',
+                     'img/casa-amarela-1.jpg') + topo('administracao.html', 'Olá, Thiago! Tenho uma casa e quero falar sobre administração para locação.') + f'''
 <main id="topo">
-{page_hero('Administração de obras, de perto e com prestação de contas', 'Cuidamos da sua obra para você acompanhar sem precisar estar lá todo dia.', 'img/casa-amarela-1.jpg', 'Casa amarela de dois andares com área externa ampla', 'Administração')}
+{page_hero('Administração de imóveis para locação por temporada', 'Você entrega a casa, a Thiago Veras cuida das reservas, dos hóspedes e da conservação.', 'img/casa-amarela-1.jpg', 'Casa amarela de dois andares com área externa ampla', 'Administração')}
   <section>
     <div class="wrap">
-      <p class="eyebrow">Sua obra sob controle</p>
+      <p class="eyebrow">Sua casa rendendo, sem dor de cabeça</p>
       <h2>O que a administração inclui</h2>
-      <p class="lead">Ideal para quem mora longe, não tem tempo ou quer evitar dor de cabeça com a obra.</p>
+      <p class="lead">Ideal para quem tem casa em Luís Correia e não mora na cidade, não tem tempo ou não quer lidar com hóspedes no dia a dia.</p>
 {servicos([
-    (I_CAPACETE, 'Equipe e execução', 'Organização da mão de obra e acompanhamento do serviço no canteiro.'),
-    (I_CARRINHO, 'Compra de materiais', 'Cotação e compra dos materiais na hora certa, sem desperdício.'),
-    (I_RELOGIO, 'Prazos', 'Cronograma acompanhado de perto, etapa por etapa.'),
-    (I_CAMERA, 'Prestação de contas', 'Você recebe notícias e fotos da obra e sabe para onde vai cada gasto.'),
+    (I_CASA, 'Divulgação e reservas', 'Sua casa anunciada, com calendário de datas e reservas organizadas.'),
+    (I_CHAT, 'Atendimento aos hóspedes', 'Contato com os interessados, combinação das datas e recepção na entrada e na saída.'),
+    (I_ESCUDO, 'Cuidado com o imóvel', 'Limpeza, conferência da casa e pequenos reparos entre uma locação e outra.'),
+    (I_PIX, 'Prestação de contas', 'Você sabe quanto a casa rendeu e para onde foi cada valor.'),
 ])}    </div>
   </section>
 
   <section class="build">
     <div class="wrap">
-      <p class="eyebrow">Obras acompanhadas</p>
-      <h2>Do canteiro à entrega</h2>
-{galeria('Obras', [OBRAS[0], OBRAS[1], OBRAS[6], OBRAS[7]])}    </div>
+      <p class="eyebrow">Exemplos de casas</p>
+      <h2>Casas prontas para receber hóspedes</h2>
+{galeria('Casas', [('img/casa-piscina-1.jpg', 'Casa com piscina e área gourmet'), ('img/casa-pergolado-1.jpg', 'Casa com jardim, pergolado e piscina'), ('img/casa-amarela-2.jpg', 'Casa amarela de dois andares'), ('img/casa-piscina-3.jpg', 'Varanda com rede e forro rebaixado')])}    </div>
   </section>
 
-{cta('Quer ajuda com a sua obra?', 'Conte em que fase ela está, que o Thiago explica como pode ajudar.', 'Falar no WhatsApp')}''' + fim() + fechar()
+{cta('Tem uma casa para administrar?', 'Conte onde ela fica e como está, que o Thiago explica como funciona e combina os valores.', 'Falar no WhatsApp')}''' + fim() + fechar()
 write('administracao.html', administracao)
 
 shutil.copy(os.path.join(HERE, 'base.css'), os.path.join(OUT, 'style.css'))

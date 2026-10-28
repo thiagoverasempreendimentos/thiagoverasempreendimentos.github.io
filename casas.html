@@ -166,9 +166,17 @@
   <button type="button" class="xb" aria-label="Fechar">×</button>
   <form method="dialog" novalidate>
     <div><h3 id="book-titulo">Reservar</h3><p class="sub">Escolha as datas e finalize direto no WhatsApp do Thiago.</p></div>
-    <div class="two-col">
-      <label>Entrada<input type="date" id="b-in" required></label>
-      <label>Saída<input type="date" id="b-out" required></label>
+    <input type="hidden" id="b-in"><input type="hidden" id="b-out">
+    <div class="cal" id="cal" aria-label="Calendário de datas">
+      <div class="cal-topo">
+        <button type="button" class="cal-nav" id="cal-ant" aria-label="Mês anterior">‹</button>
+        <strong id="cal-titulo" aria-live="polite"></strong>
+        <button type="button" class="cal-nav" id="cal-prox" aria-label="Próximo mês">›</button>
+      </div>
+      <div class="cal-sem" aria-hidden="true"><span>D</span><span>S</span><span>T</span><span>Q</span><span>Q</span><span>S</span><span>S</span></div>
+      <div class="cal-grade" id="cal-grade" role="grid"></div>
+      <div class="cal-legenda"><span><i class="lg lg-livre"></i>Livre</span><span><i class="lg lg-ocup"></i>Ocupado</span><span><i class="lg lg-sel"></i>Sua escolha</span></div>
+      <p class="cal-ajuda" id="cal-ajuda" role="status"></p>
     </div>
     <div class="two-col">
       <label>Pessoas<input type="number" id="b-pessoas" min="1" max="40" inputmode="numeric" placeholder="Ex.: 6"></label>

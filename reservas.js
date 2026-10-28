@@ -82,6 +82,78 @@
     show(msg || '');
   }
   function ocupadasDe(c){ return (c.bloqueios || []).concat(c.remoto || []); }
+
+  // ----- Calendário -----
+  var MESES = ['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
+  var calMes = null, selIn = '', selOut = '';
+  var gradeEl = document.getElementById('cal-grade'), tituloMes = document.getElementById('cal-titulo'),
+      ajudaEl = document.getElementById('cal-ajuda'), antEl = document.getElementById('cal-ant'), proxEl = document.getElementById('cal-prox');
+  var MAX_MESES = 14;
+  // Uma noite está ocupada se cai dentro de [entrada, saída) de alguma reserva
+  function noiteOcupada(d){
+    var l = ocupadasDe(casa);
+    for (var i = 0; i < l.length; i++) if (l[i][0] <= d && d < l[i][1]) return true;
+    return false;
+  }
+  // Primeira noite ocupada depois da entrada: o dia dela ainda serve de saída
+  function limiteSaida(ci){
+    var l = ocupadasDe(casa), m = null;
+    for (var i = 0; i < l.length; i++) if (l[i][0] > ci && (m === null || l[i][0] < m)) m = l[i][0];
+    return m;
+  }
+  function entradaValida(d){ return d >= iso(new Date()) && !noiteOcupada(d); }
+  function saidaValida(d){
+    if (!selIn || d <= selIn) return false;
+    var lim = limiteSaida(selIn);
+    return lim === null || d <= lim;
+  }
+  function ajudaCal(){
+    if (!selIn) ajudaEl.textContent = 'Toque na data de entrada.';
+    else if (!selOut) ajudaEl.textContent = 'Entrada em ' + br(parse(selIn)).slice(0, 5) + '. Agora toque na data de saída.';
+    else ajudaEl.textContent = br(parse(selIn)).slice(0, 5) + ' a ' + br(parse(selOut)).slice(0, 5) + '. Toque em outra data para mudar.';
+  }
+  function renderCal(){
+    if (!calMes) return;
+    var hoje = iso(new Date()), primeiro = new Date(calMes.getFullYear(), calMes.getMonth(), 1);
+    tituloMes.textContent = MESES[primeiro.getMonth()].charAt(0).toUpperCase() + MESES[primeiro.getMonth()].slice(1) + ' de ' + primeiro.getFullYear();
+    var h = parse(hoje), limite = new Date(h.getFullYear(), h.getMonth() + MAX_MESES, 1);
+    antEl.disabled = primeiro <= new Date(h.getFullYear(), h.getMonth(), 1);
+    proxEl.disabled = new Date(primeiro.getFullYear(), primeiro.getMonth() + 1, 1) >= limite;
+    var html = '', lead = primeiro.getDay();
+    for (var v = 0; v < lead; v++) html += '<span class="dia vazio"></span>';
+    var n = new Date(primeiro.getFullYear(), primeiro.getMonth() + 1, 0).getDate();
+    var escolhendoSaida = selIn && !selOut;
+    for (var dia = 1; dia <= n; dia++) {
+      var d = iso(new Date(primeiro.getFullYear(), primeiro.getMonth(), dia));
+      var passado = d < hoje, ocup = noiteOcupada(d);
+      var clicavel = !passado && (entradaValida(d) || (escolhendoSaida && saidaValida(d)));
+      var cls = 'dia';
+      if (passado) cls += ' passado';
+      else if (ocup) cls += ' ocupado';
+      if (d === hoje) cls += ' hoje';
+      if (d === selIn) cls += ' sel sel-in';
+      if (d === selOut) cls += ' sel sel-out';
+      if (selIn && selOut && d > selIn && d < selOut) cls += ' no-meio';
+      var estado = passado ? 'indisponível' : (ocup && !clicavel ? 'ocupado' : 'livre');
+      html += '<button type="button" class="' + cls + '" data-d="' + d + '" role="gridcell"' + (clicavel ? '' : ' disabled')
+            + ' aria-label="' + dia + ' de ' + MESES[primeiro.getMonth()] + ', ' + estado + '"'
+            + (d === selIn || d === selOut ? ' aria-pressed="true"' : '') + '>' + dia + '</button>';
+    }
+    gradeEl.innerHTML = html;
+    ajudaCal();
+  }
+  function aplicarSelecao(){ inEl.value = selIn; outEl.value = selOut; atualizar(); renderCal(); }
+  function limparSelecao(){ selIn = ''; selOut = ''; inEl.value = ''; outEl.value = ''; }
+  gradeEl.addEventListener('click', function(e){
+    var b = e.target.closest('button.dia'); if (!b || b.disabled) return;
+    var d = b.dataset.d;
+    if (!selIn || selOut) { if (entradaValida(d)) { selIn = d; selOut = ''; } }
+    else if (saidaValida(d)) { selOut = d; }
+    else if (entradaValida(d)) { selIn = d; selOut = ''; }
+    aplicarSelecao();
+  });
+  antEl.addEventListener('click', function(){ calMes = new Date(calMes.getFullYear(), calMes.getMonth() - 1, 1); renderCal(); });
+  proxEl.addEventListener('click', function(){ calMes = new Date(calMes.getFullYear(), calMes.getMonth() + 1, 1); renderCal(); });
   function listaOcupadas(){
     var el = document.getElementById('b-ocupadas');
     var hoje = iso(new Date());
@@ -126,18 +198,17 @@
     casa = c;
     tituloEl.textContent = 'Reservar: ' + c.nome;
     var hoje = iso(new Date()); inEl.min = hoje; outEl.min = hoje;
-    inEl.value = ''; outEl.value = '';
+    limparSelecao(); var hj = parse(hoje); calMes = new Date(hj.getFullYear(), hj.getMonth(), 1);
     pesEl.max = c.capacidade || 40;
-    listaOcupadas(); atualizar(); dlg.showModal();
-    carregarOcupadas().then(function(){ if (dlg.open && casa === c) { listaOcupadas(); atualizar(); } });
+    listaOcupadas(); atualizar(); renderCal(); dlg.showModal();
+    carregarOcupadas().then(function(){
+      if (!(dlg.open && casa === c)) return;
+      // se a data escolhida acabou de ser ocupada, volta ao início
+      if (selIn && !entradaValida(selIn)) limparSelecao();
+      else if (selIn && selOut && ocupadasDe(c).some(function(p){ return selIn < p[1] && selOut > p[0]; })) limparSelecao();
+      listaOcupadas(); atualizar(); renderCal();
+    });
   }
-  inEl.addEventListener('change', function(){
-    if (inEl.value) {
-      var d = parse(inEl.value); d.setDate(d.getDate() + 1); outEl.min = iso(d);
-      if (outEl.value && outEl.value <= inEl.value) outEl.value = '';
-    }
-    atualizar();
-  });
   var zapEl = document.getElementById('b-whats');
   [outEl, pesEl, nomeEl].forEach(function(el){ el.addEventListener('input', atualizar); });
   dlg.querySelector('.xb').addEventListener('click', function(){ dlg.close(); });
@@ -172,7 +243,7 @@
       }
       fim();
       if (x.status === 409) {
-        carregarOcupadas().then(function(){ listaOcupadas(); atualizar(); lock('Alguém acabou de reservar esse período. Escolha outras datas.'); });
+        carregarOcupadas().then(function(){ limparSelecao(); listaOcupadas(); atualizar(); renderCal(); lock('Alguém acabou de reservar esse período. Escolha outras datas.'); });
       } else if (x.status === 429) {
         show(x.j.erro === 'ja_tem_reserva_em_aberto'
           ? 'Você já tem datas seguras em aberto. Fale com o Thiago para concluir ou alterar.'

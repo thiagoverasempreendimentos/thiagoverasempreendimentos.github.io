@@ -288,3 +288,34 @@ nav.menu a[aria-current="page"]::after{transform:scaleX(1)}
 .wa-float.oculto{opacity:0;pointer-events:none;transform:scale(.8)}
 .book .ocupadas{margin:0;font-size:.85rem;color:var(--muted);background:var(--sand);border-radius:10px;padding:8px 12px}
 .book .ocupadas b{color:var(--ink)}
+
+/* calendário da reserva */
+.cal{background:var(--bg);border:1.5px solid var(--line);border-radius:16px;padding:12px 10px 10px}
+.cal-topo{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:0 4px 8px}
+.cal-topo strong{font:700 1rem var(--font-head)}
+.cal-nav{width:40px;height:40px;border-radius:50%;border:0;background:var(--surface);color:var(--ink);font-size:1.5rem;line-height:1;cursor:pointer;box-shadow:inset 0 0 0 1px var(--line)}
+.cal-nav:disabled{opacity:.3;cursor:default}
+.cal-nav:not(:disabled):hover{background:var(--sand)}
+.cal-sem,.cal-grade{display:grid;grid-template-columns:repeat(7,1fr)}
+.cal-sem span{text-align:center;font:700 .72rem var(--font-head);color:var(--muted);padding:4px 0}
+.cal-grade{row-gap:3px}
+.dia{position:relative;height:42px;border:0;background:transparent;color:var(--ink);font:600 .95rem var(--font-body);cursor:pointer;border-radius:0;display:grid;place-items:center}
+.dia.vazio{pointer-events:none}
+.dia:not(:disabled):not(.sel):hover{background:var(--sand);border-radius:10px}
+.dia.hoje:not(.sel){box-shadow:inset 0 0 0 1.5px var(--brand);border-radius:10px}
+.dia.passado{color:var(--muted);opacity:.35;cursor:default}
+.dia.ocupado{color:var(--muted);cursor:not-allowed;background:repeating-linear-gradient(135deg,transparent 0 5px,color-mix(in srgb,var(--muted) 22%,transparent) 5px 7px);border-radius:8px}
+.dia.ocupado::after{content:"";position:absolute;left:22%;right:22%;top:50%;height:1.5px;background:var(--muted);opacity:.6;transform:rotate(-12deg)}
+.dia.ocupado:not(:disabled){cursor:pointer;color:var(--ink)}
+.dia.no-meio{background:color-mix(in srgb,var(--brand) 16%,transparent)}
+.dia.sel{background:var(--brand);color:#fff;border-radius:10px;z-index:1}
+.dia.sel-in:not(.sel-out){border-radius:10px 0 0 10px}
+.dia.sel-out:not(.sel-in){border-radius:0 10px 10px 0}
+.dia:focus-visible{outline:3px solid var(--brand);outline-offset:-2px;z-index:2}
+.cal-legenda{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:8px;font-size:.78rem;color:var(--muted)}
+.cal-legenda span{display:inline-flex;align-items:center;gap:6px}
+.lg{display:inline-block;width:14px;height:14px;border-radius:4px;border:1px solid var(--line);background:var(--surface)}
+.lg-ocup{background:repeating-linear-gradient(135deg,transparent 0 3px,color-mix(in srgb,var(--muted) 45%,transparent) 3px 5px)}
+.lg-sel{background:var(--brand);border-color:var(--brand)}
+.cal-ajuda{margin:8px 0 0;text-align:center;font-size:.88rem;font-weight:600}
+.dia.sel::after{display:none}

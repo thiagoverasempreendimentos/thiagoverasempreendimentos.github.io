@@ -263,13 +263,14 @@ nav.menu a[aria-current="page"]::after{transform:scaleX(1)}
 /* início: nome em destaque e as quatro áreas logo na abertura */
 .hub{position:relative;min-height:calc(100vh - 122px);display:flex;align-items:center;color:#fff;background:var(--deep);overflow:hidden}
 .hub>.fundo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.hub::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 38%,rgba(10,8,6,.34) 0%,rgba(10,8,6,.7) 100%),linear-gradient(180deg,rgba(10,8,6,.62) 0%,rgba(10,8,6,.5) 40%,rgba(10,8,6,.9) 100%)}
+.hub::after{content:"";position:absolute;inset:0;background:radial-gradient(70% 45% at 50% 24%,rgba(10,8,6,.34),transparent 72%),linear-gradient(180deg,rgba(10,8,6,.22) 0%,rgba(10,8,6,.08) 30%,rgba(10,8,6,.34) 64%,rgba(10,8,6,.80) 100%)}
 .hub .wrap{position:relative;z-index:1;width:100%;padding-top:clamp(20px,3.2vh,40px);padding-bottom:clamp(24px,4vh,48px)}
 .marca{text-align:center}
 .marca-icone{width:clamp(70px,9vw,112px);height:auto;margin:0 auto 10px;filter:drop-shadow(0 6px 18px rgba(0,0,0,.35))}
 .marca h1{margin:0;font:800 clamp(2.4rem,7.4vw,4.8rem)/.95 var(--font-head);letter-spacing:.01em;text-transform:uppercase;text-shadow:0 4px 30px rgba(0,0,0,.35)}
 .marca h1 .leve{font-weight:500}
-.marca h1 .emp{display:block;margin-top:12px;padding-left:.42em;font:700 clamp(.82rem,2.3vw,1.35rem)/1 var(--font-head);letter-spacing:.42em;color:var(--brand)}
+.marca h1 .emp{display:flex;align-items:center;justify-content:center;gap:.9em;margin-top:14px;padding-left:.42em;font:700 clamp(.78rem,2.2vw,1.3rem)/1 var(--font-head);letter-spacing:.42em;color:#fff}
+.marca h1 .emp::before,.marca h1 .emp::after{content:"";width:clamp(26px,6vw,64px);height:3px;border-radius:3px;background:var(--brand);box-shadow:0 0 14px rgba(253,79,26,.7)}
 .marca .slogan-g{margin:14px auto 0;color:#f3ece4;font-size:clamp(.95rem,2vw,1.1rem)}
 .escolha{margin:clamp(18px,3.4vh,34px) 0 14px;text-align:center;font:700 .82rem var(--font-head);letter-spacing:.2em;text-transform:uppercase;color:#fff;opacity:.9}
 .hub .area{min-height:clamp(340px,46vh,470px);text-align:left;border:1px solid rgba(255,255,255,.16);box-shadow:0 18px 44px rgba(0,0,0,.45)}
@@ -319,3 +320,5 @@ nav.menu a[aria-current="page"]::after{transform:scaleX(1)}
 .lg-sel{background:var(--brand);border-color:var(--brand)}
 .cal-ajuda{margin:8px 0 0;text-align:center;font-size:.88rem;font-weight:600}
 .dia.sel::after{display:none}
+
+.marca h1,.marca .slogan-g,.escolha{text-shadow:0 2px 18px rgba(0,0,0,.55)}

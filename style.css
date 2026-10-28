@@ -1,22 +1,13 @@
 :root{
+  color-scheme:light;
   --bg:#faf8f4; --surface:#ffffff; --ink:#1f1d1b; --muted:#625b55; --line:#e9e3da;
   --brand:#fd4f1a; --brand-dark:#d93f0f; --brand-ink:#ffffff; --deep:#2b2b2b; --sea:#0e7c86; --sand:#f4ede2;
   --accent:#0e7c86; --accent-text:#0a6b74; --accent-hi:#2bb3c0; --faixa:linear-gradient(135deg,#0a5a62,#0e7c86);
   --radius:16px; --shadow:0 10px 30px rgba(31,29,27,.08);
   --font-head:"Montserrat",system-ui,sans-serif; --font-body:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
 }
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#171513; --surface:#221f1c; --ink:#f3eee8; --muted:#b4aaa0; --line:#38322c;
-    --brand:#ff6232; --brand-dark:#ff7a50; --deep:#111; --sea:#4fb7c1; --sand:#2a2622;
-    --shadow:0 10px 30px rgba(0,0,0,.35);
-  }
-}
-:root[data-theme="dark"]{
-  --bg:#171513; --surface:#221f1c; --ink:#f3eee8; --muted:#b4aaa0; --line:#38322c;
-  --brand:#ff6232; --brand-dark:#ff7a50; --deep:#111; --sea:#4fb7c1; --sand:#2a2622;
-  --shadow:0 10px 30px rgba(0,0,0,.35);
-}
+
+
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:96px}
 body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.65 var(--font-body);-webkit-font-smoothing:antialiased}
@@ -215,7 +206,7 @@ dialog.book::backdrop{background:rgba(10,7,5,.7)}
 .book .resumo{background:var(--bg);border:1px dashed var(--line);border-radius:12px;padding:12px 14px;font-size:.95rem;min-height:3.2em}
 .book .resumo b{font-size:1.05rem}
 .book .erro{color:#b3261e;font-weight:600;margin:0;font-size:.92rem}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .book .erro{color:#ff8a80}}
+
 .book .btn{width:100%}
 .book .nota{margin:0;color:var(--muted);font-size:.82rem;text-align:center}
 
@@ -329,12 +320,7 @@ body.tema-casas{--accent:#0e7c86;--accent-text:#0a6b74;--accent-hi:#2bb3c0;--fai
 body.tema-construcoes{--accent:#fd4f1a;--accent-text:#c2380a;--accent-hi:#fd4f1a;--faixa:#2b2b2b}
 body.tema-projetos{--accent:#1f4e8c;--accent-text:#1f4e8c;--accent-hi:#5b94e6;--faixa:linear-gradient(135deg,#143560,#1f4e8c)}
 body.tema-administracao{--accent:#2f7d5b;--accent-text:#256548;--accent-hi:#4cc08d;--faixa:linear-gradient(135deg,#1d5a40,#2f7d5b)}
-@media(prefers-color-scheme:dark){
-  body.tema-inicio,body.tema-casas{--accent-text:#5cc8d3}
-  body.tema-construcoes{--accent-text:#ff7a50}
-  body.tema-projetos{--accent:#3b6fb8;--accent-text:#86b2f2}
-  body.tema-administracao{--accent:#3c946e;--accent-text:#6cd3a2}
-}
+
 .build .eyebrow,.build .lead strong{color:var(--accent-hi)}
 .area::after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:var(--c,var(--brand))}
 .area.t-casas{--c:#0e7c86;--cl:#4fd0dc}

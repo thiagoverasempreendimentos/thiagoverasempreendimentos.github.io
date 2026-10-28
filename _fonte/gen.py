@@ -246,9 +246,9 @@ inicio = head('Thiago Veras Empreendimentos — Casas de temporada, construção
       <p class="escolha">O que você procura?</p>
       <div class="areas">
 {area('01', 'casas.html', 'img/casa-piscina-1.jpg', 'Casas', 'Casas de temporada com piscina, perto da praia. Reserve direto com o proprietário.', 'Ver casas')}
-{area('02', 'construcoes.html', 'img/obra-sobrado.jpg', 'Construções', 'Casas, sobrados, galpões e pontos comerciais, do início à entrega das chaves.', 'Ver obras')}
-{area('03', 'projetos.html', 'img/casa-moderna-2.jpg', 'Projetos', 'Planejamento da sua obra: o que construir, em quais etapas e quanto vai custar.', 'Saiba mais')}
-{area('04', 'administracao.html', 'img/obra-casa.jpg', 'Administração', 'Acompanhamos sua obra de perto: equipe, materiais, prazos e prestação de contas.', 'Saiba mais')}
+{area('02', 'construcoes.html', 'img/casa-fachada-2.jpg', 'Construções', 'Casas, sobrados, galpões e pontos comerciais, do início à entrega das chaves.', 'Ver obras')}
+{area('03', 'projetos.html', 'img/casa-moderna-1.jpg', 'Projetos', 'Planejamento da sua obra: o que construir, em quais etapas e quanto vai custar.', 'Saiba mais')}
+{area('04', 'administracao.html', 'img/casa-amarela-1.jpg', 'Administração', 'Acompanhamos sua obra de perto: equipe, materiais, prazos e prestação de contas.', 'Saiba mais')}
       </div>
     </div>
     <span class="credit" id="credito-capa"></span>
@@ -385,7 +385,7 @@ OBRAS = [
 ]
 construcoes = head('Construções em Luís Correia, PI — Thiago Veras Construtora & Imobiliária',
                    'Construção de casas, sobrados, galpões e pontos comerciais em Luís Correia e região, do início à entrega das chaves.',
-                   'img/obra-sobrado.jpg') + topo('construcoes.html', 'Olá, Thiago! Quero um orçamento de obra.') + f'''
+                   'img/casa-fachada-2.jpg') + topo('construcoes.html', 'Olá, Thiago! Quero um orçamento de obra.') + f'''
 <main id="topo">
 {page_hero('Construção de casas, sobrados e galpões em Luís Correia', 'Do projeto à entrega das chaves, com acompanhamento em cada etapa.', 'img/casa-moderna-4.jpg', 'Fachada de casa construída pela Thiago Veras, iluminada à noite', 'Construções')}
   <section>
@@ -425,9 +425,9 @@ write('construcoes.html', construcoes)
 # ---------------- Projetos ----------------
 projetos = head('Projetos — Thiago Veras Empreendimentos, Luís Correia, PI',
                 'Planejamento e projeto da sua obra em Luís Correia e região: o que construir, em quais etapas e quanto vai custar.',
-                'img/casa-moderna-2.jpg') + topo('projetos.html', 'Olá, Thiago! Quero conversar sobre um projeto.') + f'''
+                'img/casa-piscina-3.jpg') + topo('projetos.html', 'Olá, Thiago! Quero conversar sobre um projeto.') + f'''
 <main id="topo">
-{page_hero('Projeto e planejamento da sua obra', 'Antes de construir, planejar: o que fazer, em quais etapas e quanto vai custar.', 'img/casa-moderna-2.jpg', 'Sala ampla com forro rebaixado e iluminação embutida', 'Projetos')}
+{page_hero('Projeto e planejamento da sua obra', 'Antes de construir, planejar: o que fazer, em quais etapas e quanto vai custar.', 'img/casa-piscina-3.jpg', 'Varanda ampla com forro rebaixado, rede e piscina ao fundo', 'Projetos')}
   <section>
     <div class="wrap">
       <p class="eyebrow">Do papel à obra</p>
@@ -458,9 +458,9 @@ write('projetos.html', projetos)
 # ---------------- Administração ----------------
 administracao = head('Administração de obras — Thiago Veras Empreendimentos, Luís Correia, PI',
                      'Administração de obras em Luís Correia e região: equipe, compra de materiais, prazos e prestação de contas.',
-                     'img/obra-casa.jpg') + topo('administracao.html', 'Olá, Thiago! Quero falar sobre administração de obra.') + f'''
+                     'img/casa-amarela-1.jpg') + topo('administracao.html', 'Olá, Thiago! Quero falar sobre administração de obra.') + f'''
 <main id="topo">
-{page_hero('Administração de obras, de perto e com prestação de contas', 'Cuidamos da sua obra para você acompanhar sem precisar estar lá todo dia.', 'img/obra-casa.jpg', 'Casa em construção com entrada e calçada de pedra', 'Administração')}
+{page_hero('Administração de obras, de perto e com prestação de contas', 'Cuidamos da sua obra para você acompanhar sem precisar estar lá todo dia.', 'img/casa-amarela-1.jpg', 'Casa amarela de dois andares com área externa ampla', 'Administração')}
   <section>
     <div class="wrap">
       <p class="eyebrow">Sua obra sob controle</p>

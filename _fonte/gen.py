@@ -249,7 +249,7 @@ inicio = head('Thiago Veras Empreendimentos — Casas de temporada, construção
 {area('01', 'casas.html', 'img/casa-piscina-1.jpg', 'Casas', 'Casas de temporada com piscina, perto da praia. Reserve direto com o proprietário.', 'Ver casas')}
 {area('02', 'construcoes.html', 'img/casa-fachada-2.jpg', 'Construções', 'Casas, sobrados, galpões e pontos comerciais, do início à entrega das chaves.', 'Ver obras')}
 {area('03', 'projetos.html', 'img/casa-moderna-1.jpg', 'Projetos', 'Planejamento da sua obra: o que construir, em quais etapas e quanto vai custar.', 'Saiba mais')}
-{area('04', 'administracao.html', 'img/casa-amarela-capa.jpg', 'Administração', 'Você entrega a casa e cuidamos da locação: reservas, hóspedes, conservação e prestação de contas.', 'Saiba mais')}
+{area('04', 'administracao.html', 'img/casa-pergolado-1.jpg', 'Administração', 'Você entrega a casa e cuidamos da locação: reservas, hóspedes, conservação e prestação de contas.', 'Saiba mais')}
       </div>
     </div>
     <span class="credit" id="credito-capa"></span>

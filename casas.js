@@ -58,10 +58,10 @@ window.CASAS = [
     diaria: 500, capacidade: null, quartos: null, minNoites: 1, bloqueios: [], // diária de teste
   },
   {
-    id: 'amarela', codigo: 'C03', nome: 'Casa amarela', cidade: null,
+    id: 'amarela', codigo: 'C03', nome: 'Casa de dois andares', cidade: null,
     resumo: 'Sobrado espaçoso com quintal amplo e área aberta.',
     destaques: ['Sobrado', 'Quintal amplo', 'Área aberta'],
-    fotos: ['img/casa-amarela-1.jpg', 'img/casa-amarela-2.jpg'],
+    fotos: ['img/casa-amarela-capa.jpg', 'img/casa-amarela-2.jpg'],
     diaria: null, capacidade: null, quartos: null, minNoites: 1, bloqueios: [],
   },
   {

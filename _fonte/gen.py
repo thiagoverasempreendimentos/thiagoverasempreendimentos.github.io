@@ -67,11 +67,13 @@ BOTAO = {  # texto e destino do botão do topo, por página
     'casas.html': ('Reservar', '#casas', None),
     'construcoes.html': ('Pedir orçamento', None, 'Olá, Thiago! Quero um orçamento de obra.'),
     'projetos.html': ('Falar sobre meu projeto', None, 'Olá, Thiago! Quero conversar sobre um projeto.'),
-    'administracao.html': ('Falar com o Thiago', None, 'Olá, Thiago! Tenho uma casa e quero falar sobre administração para locação.'),
+    'administracao.html': (None, None, None),
 }
 
 def botao_topo(atual):
     texto, destino, msg = BOTAO[atual]
+    if texto is None:
+        return '<!-- Sem CTA no cabeçalho desta página -->'
     if destino:
         return f'<a class="btn small" href="{destino}">{texto}</a>'
     return f'<a class="btn small wa-link" data-msg="{msg}" href="#" rel="noopener">{texto}</a>'
@@ -149,7 +151,7 @@ def fim(scripts=''):
   <div class="wrap grid">
     <img src="img/logo.png" alt="Thiago Veras Empreendimentos" width="99" height="70">
     <div>
-      <div><b>THIAGO V MUNIZ LTDA</b> · CNPJ 44.226.649/0001-09</div>
+      <div><b>THIAGO V MUNIZ LTDA</b></div>
       <div>Avenida Prefeito Antonio de Padua da Costa Lima, 838, Centro · Luís Correia, PI · CEP 64220-000</div>
       <div>WhatsApp (86) 99866-2992</div>
       <div style="margin-top:8px">{links}</div>
@@ -199,7 +201,6 @@ JSONLD = '''<script type="application/ld+json">
   "@type": "LocalBusiness",
   "name": "Thiago Veras Empreendimentos",
   "legalName": "THIAGO V MUNIZ LTDA",
-  "taxID": "44.226.649/0001-09",
   "slogan": "Confiança, qualidade e resultados",
   "image": "img/capa.jpg",
   "telephone": "+55 86 99866-2992",
@@ -248,7 +249,7 @@ inicio = head('Thiago Veras Empreendimentos — Casas de temporada, construção
 {area('01', 'casas.html', 'img/casa-piscina-1.jpg', 'Casas', 'Casas de temporada com piscina, perto da praia. Reserve direto com o proprietário.', 'Ver casas')}
 {area('02', 'construcoes.html', 'img/casa-fachada-2.jpg', 'Construções', 'Casas, sobrados, galpões e pontos comerciais, do início à entrega das chaves.', 'Ver obras')}
 {area('03', 'projetos.html', 'img/casa-moderna-1.jpg', 'Projetos', 'Planejamento da sua obra: o que construir, em quais etapas e quanto vai custar.', 'Saiba mais')}
-{area('04', 'administracao.html', 'img/casa-amarela-1.jpg', 'Administração', 'Você entrega a casa e cuidamos da locação: reservas, hóspedes, conservação e prestação de contas.', 'Saiba mais')}
+{area('04', 'administracao.html', 'img/casa-amarela-capa.jpg', 'Administração', 'Você entrega a casa e cuidamos da locação: reservas, hóspedes, conservação e prestação de contas.', 'Saiba mais')}
       </div>
     </div>
     <span class="credit" id="credito-capa"></span>
@@ -458,9 +459,9 @@ write('projetos.html', projetos)
 # ---------------- Administração ----------------
 administracao = head('Administração de imóveis para temporada — Thiago Veras Empreendimentos, Luís Correia, PI',
                      'Entregue sua casa para o Thiago administrar e cuidar da locação por temporada em Luís Correia, PI: reservas, hóspedes, limpeza e prestação de contas.',
-                     'img/casa-amarela-1.jpg') + topo('administracao.html', 'Olá, Thiago! Tenho uma casa e quero falar sobre administração para locação.') + f'''
+                     'img/casa-amarela-capa.jpg') + topo('administracao.html', 'Olá, Thiago! Tenho uma casa e quero falar sobre administração para locação.') + f'''
 <main id="topo">
-{page_hero('Administração de imóveis para locação por temporada', 'Você entrega a casa, a Thiago Veras cuida das reservas, dos hóspedes e da conservação.', 'img/casa-amarela-1.jpg', 'Casa amarela de dois andares com área externa ampla', 'Administração')}
+{page_hero('Administração de imóveis para locação por temporada', 'Você entrega a casa, a Thiago Veras cuida das reservas, dos hóspedes e da conservação.', 'img/casa-amarela-capa.jpg', 'Casa amarela de dois andares com área externa ampla', 'Administração')}
   <section>
     <div class="wrap">
       <p class="eyebrow">Sua casa rendendo, sem dor de cabeça</p>
